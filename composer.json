@@ -1,0 +1,46 @@
+{
+  "name": "WP/website",
+  "description": "",
+  "version": "0.1.0",
+  "type": "project",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "artifact",
+      "url": "composer-artifacts/"
+    }
+  ],
+  "require": {
+    "php": ">=5.4",
+    "johnpbloch/wordpress": "4.7",
+    "composer/installers": "~1.0",
+    "advanced-custom-fields-pro": "5.3.2.2",
+    "wpackagist-plugin/regenerate-thumbnails": "2.2.6",
+    "wpackagist-plugin/akismet": "3.2",
+    "wpackagist-plugin/post-types-order": "1.8.9.2",
+    "wpackagist-plugin/svg-support": "2.2.3.2",
+    "wpackagist-plugin/wordpress-seo": "3.6",
+    "wpackagist-plugin/manual-image-crop": "1.12",
+    "wpackagist-plugin/contact-form-7": "4.7",
+    "wpackagist-plugin/yith-infinite-scrolling": "1.0.8",
+    "wp-cli/wp-cli" : "~0.22",
+    "psy/psysh" : "~0.6"
+  },
+  "extra": {
+    "installer-paths": {
+      "public/wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "public/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+      "public/wp-content/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": "public/wp"
+  },
+  "scripts" : {
+    "post-install-cmd" : [
+      "rm -f cli/wp",
+      "ln -s ../vendor/wp-cli/wp-cli/bin/wp cli/wp"
+    ]
+  }
+}

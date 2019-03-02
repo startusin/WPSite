@@ -1,0 +1,67 @@
+{
+    "key": "group_5a13ee7a0b01c",
+    "title": "Page Basic",
+    "fields": [
+        {
+            "key": "field_5a13ee9385a61",
+            "label": "Page Geolocation",
+            "name": "page_basic_geolocation",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "geogroups"
+            ],
+            "taxonomy": [],
+            "allow_null": 1,
+            "multiple": 1,
+            "return_format": "id",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "services"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "testimonials"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "customers"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1511516054
+}

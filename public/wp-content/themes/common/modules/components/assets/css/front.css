@@ -1,0 +1,116 @@
+.component-com_banner .banner {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.component-com_banner .banner .video-holder {
+  display: none;
+}
+@media screen and (min-width: 1360px) {
+  .component-com_banner .banner .video-holder {
+    display: block;
+    position: relative;
+    padding-bottom: 55%;
+    height: 0;
+    overflow: hidden;
+  }
+  .component-com_banner .banner .video-holder iframe {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 122%;
+    height: 125%;
+  }
+}
+.component-com_banner .banner .video-holder-bg {
+  display: block;
+  position: absolute;
+  padding-bottom: 55%;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+.component-com_banner .banner .inner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -65%);
+}
+.component-com_banner .banner .inner-content .banner-btm {
+  text-align: center;
+}
+.component-com_banner .banner .inner-content .banner-btm .callbacks_container {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+.component-com_banner .banner .inner-content .banner-btm .callbacks_container .rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.component-com_banner .banner .inner-content .banner-btm .banner-bottom h1 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.8em;
+  margin: 0 auto;
+  width: 100%;
+  line-height: 1em;
+  margin-bottom: 40px;
+}
+@media (min-width: 500px) {
+  .component-com_banner .banner .inner-content .banner-btm .banner-bottom h1 {
+    font-size: 2.1em;
+  }
+}
+@media (min-width: 900px) {
+  .component-com_banner .banner .inner-content .banner-btm .banner-bottom h1 {
+    width: 60%;
+  }
+}
+.component-com_banner .banner .inner-content .banner-btm .banner-bottom p {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 400;
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 7px;
+  line-height: 1.4em;
+}
+@media (min-width: 500px) {
+  .component-com_banner .banner .inner-content .banner-btm .banner-bottom p {
+    font-size: 21px;
+  }
+}
+@media (min-width: 900px) {
+  .component-com_banner .banner .inner-content .banner-btm .banner-bottom p {
+    width: 53%;
+  }
+}
+.component-com_banner .banner .mouse-icon {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  animation-duration: 2.5s;
+}
+
+.component-com_cases .owl-carousel .owl-item img {
+  height: auto;
+}
+
+/*# sourceMappingURL=front.css.map */
