@@ -7,7 +7,7 @@ add_action('wp_print_styles', function () {
 
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('jquery-slick', get_module_js('components/slick.min.js'), array('jquery'), nix_get_rev(), true);
-    wp_enqueue_script('logos-carousel', get_module_js('components/logos-carousel.js'), array('jquery', 'jquery-slick'), nix_get_rev(), true);
+    wp_enqueue_script('news-carousel', get_module_js('components/news-carousel.js'), array('jquery', 'jquery-slick'), nix_get_rev(), true);
 });
 
 global $the_component_counter;

@@ -1,117 +1,28 @@
 .component-com_banner {
+  margin: 25px 0;
+
   .banner {
-    background-repeat: no-repeat;
-    background-position: center;
+    height: 360px;
+    background: no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
-    height: 100vh;
+    color: #fff;
+    width: 100%;
+    margin-top: 30px;
     position: relative;
-    overflow: hidden;
 
-    .video-holder {
-      display: none;
-
-      @media screen and (min-width: 1360px) {
-        display: block;
-        position: relative;
-        padding-bottom: 55%;
-        height: 0;
-        overflow: hidden;
-
-        iframe {
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 122%;
-          height: 125%;
-        }
-      }
-    }
-
-    .video-holder-bg {
-      display: block;
-      position: absolute;
-      padding-bottom: 55%;
-      height: 100%;
+    .description {
+      font-size: 30px;
+      font-weight: 500;
       width: 100%;
-      top: 0;
-      background: rgba(0,0,0,.5);
-      overflow: hidden;
-    }
+      line-height: 1.4;
 
-    .inner-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -65%);
-
-      .banner-btm {
-        text-align: center;
-
-        .callbacks_container {
-          position: relative;
-          float: left;
-          width: 100%;
-
-          .rslides {
-            position: relative;
-            list-style: none;
-            overflow: hidden;
-            width: 100%;
-            padding: 0;
-            margin: 0;
-          }
-        }
-
-        .banner-bottom h1 {
-          color: #fff;
-          font-weight: 700;
-          font-size: 1.8em;
-          margin: 0 auto;
-          width: 100%;
-          line-height: 1em;
-          margin-bottom: 40px;
-
-          @media (min-width: 500px) {
-            font-size: 2.1em;
-          }
-
-          @media (min-width: 900px) {
-            width: 60%;
-          }
-        }
-
-        .banner-bottom p {
-          color: #fff;
-          font-size: 17px;
-          font-weight: 400;
-          margin: 0 auto;
-          width: 100%;
-          margin-top: 7px;
-          line-height: 1.4em;
-
-          @media (min-width: 500px) {
-            font-size: 21px;
-          }
-
-          @media (min-width: 900px) {
-            width: 53%;
-          }
-        }
+      @media (min-width: $screen-md-min) {
+        font-size: 37px;
       }
-    }
-
-    .mouse-icon {
-      position: absolute;
-      bottom: 50px;
-      left: 0;
-      right: 0;
-      margin: auto;
-      animation-duration: 2.5s;
     }
   }
 }
