@@ -1,5 +1,65 @@
 <?php get_header(); ?>
-<?php $bg = wp_get_attachment_image_src(get_field('blog_basic_image', get_the_ID()), 'full'); ?>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+            <?php $bg = wp_get_attachment_image_src(get_field('blog_basic_image', get_the_ID()), 'full'); ?>
+            <p class="title"><?php echo get_the_title(); ?></p>
+            <p class="text_after open_sans">
+                <?php
+                $content_post = get_post(get_the_ID());
+                echo $content_post->post_content;
+                ?>
+            </p>
+            <hr>
+            <div class="title">Downloads</div>
+            <a href="" class="url open_sans pdf">SOCIAL PLUS position paper on the proposal for a regulation on veterinary medicinal products (January 2015).doc</a>
+            <a href="" class="url open_sans folder">SOCIAL PLUS position paper on the proposal for a regulation on veterinary medicinal products (January 2015).doc</a>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+            <div class="right_block">
+                <p class="title bold">All Policies</p>
+                <ul class="policies_menu open_sans">
+                    <li><a href="">Active and Healthy Ageing</a></li>
+                    <li><a href="">Adherence</a></li>
+                    <li><a href="">Antibiotic and Antimicrobial Resistance (AMR)</a></li>
+                    <li><a href="">Blueprint</a></li>
+                    <li><a href="">Cancer Care</a></li>
+                    <li><a href="">Data Protection Regulation</a></li>
+                    <li><a href="">E-Health</a></li>
+                    <li><a href="">Active and Healthy Ageing</a></li>
+                    <li><a href="">Adherence</a></li>
+                    <li><a href="">Antibiotic and Antimicrobial Resistance (AMR)</a></li>
+                    <li><a href="">Blueprint</a></li>
+                    <li><a href="">Cancer Care</a></li>
+                    <li><a href="">Data Protection Regulation</a></li>
+                    <li><a href="">E-Health</a></li>
+                    <li><a href="">Active and Healthy Ageing</a></li>
+                    <li><a href="">Adherence</a></li>
+                    <li><a href="">Antibiotic and Antimicrobial Resistance (AMR)</a></li>
+                    <li><a href="">Blueprint</a></li>
+                    <li><a href="">Cancer Care</a></li>
+                    <li><a href="">Data Protection Regulation</a></li>
+                    <li><a href="">E-Health</a></li>
+                    <li><a href="">Active and Healthy Ageing</a></li>
+                    <li><a href="">Adherence</a></li>
+                    <li><a href="">Antibiotic and Antimicrobial Resistance (AMR)</a></li>
+                    <li><a href="">Blueprint</a></li>
+                    <li><a href="">Cancer Care</a></li>
+                    <li><a href="">Data Protection Regulation</a></li>
+                    <li><a href="">E-Health</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+
+
+
 
 <div class="blog-template-item">
     <header class="article" style="background-image: url('<?php echo $bg[0]; ?>');">
