@@ -1,0 +1,55 @@
+.post-template-default {
+  .text_after {
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 32px;
+    letter-spacing: 0.29px;
+    text-align: justify;
+  }
+  .blue {
+    color: #245590;
+  }
+  .green {
+    color: #5cb113;
+  }
+  #menu-all-policies {
+    padding: 0;
+    list-style: none;
+    font-weight: 600;
+  }
+  #menu-all-policies li a {
+    line-height: 2rem;
+    color: #333333;
+  }
+  #menu-all-policies li a:hover {
+    color: #245590;
+  }
+  .url {
+    font-size: 16px;
+    font-weight: 300;
+    position: relative;
+    margin-left: 30px;
+    display: block;
+    margin-top: 1rem;
+  }
+  .pdf:before {
+    content: '';
+    background-image: url(../img/pdf.png);
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: absolute;
+    left: -30px;
+  }
+  .folder:before {
+    content: '';
+    background-image: url(../img/folder.png);
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: absolute;
+    left: -30px;
+  }
+}
