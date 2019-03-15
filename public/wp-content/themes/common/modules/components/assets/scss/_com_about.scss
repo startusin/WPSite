@@ -1,0 +1,38 @@
+.component-com_about {
+  .pharmacists_block {
+    padding: 40px 0;
+
+    .title {
+      margin-bottom: 15px;
+    }
+
+    .images-inner img {
+      margin-bottom: 10px;
+    }
+
+    .more {
+      color: #245590;
+      font-size: 16px;
+      font-weight: 600;
+      position: relative;
+      letter-spacing: 0.04px;
+
+      &:before{
+        content: '';
+        width: 22px;
+        height: 22px;
+        margin-top: -3px;
+        font-size: 20px;
+        display: inline-block;
+        background: url('../img/more.png') no-repeat center;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        -ms-background-size: cover;
+        margin-right: 11px;
+        vertical-align: middle;
+      }
+    }
+  }
+}

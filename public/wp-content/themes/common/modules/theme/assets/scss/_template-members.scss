@@ -1,0 +1,38 @@
+.page-template-template-members {
+  .members_block {
+    color: #333333;
+    margin-bottom: 3rem;
+  }
+
+  .country_photo {
+    margin-right: 15px;
+    display: inline-block;
+  }
+
+  .country_name {
+    color: #245590;
+    font-size: 18px;
+    padding: 0;
+    display: inline-block;
+  }
+
+  .country_description {
+    font-weight: 600;
+  }
+
+  .hr_new {
+    width: 40px;
+    height: 2px;
+    background: #245590;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .country_description {
+    font-weight: 600;
+
+    &.first {
+      margin-top: 15px;
+    }
+  }
+}

@@ -11,26 +11,8 @@ add_action('wp_enqueue_scripts', function () {
 });
 
 global $the_component_counter;
-global $geodata;
 
 $the_component_counter= 0;
-
-if (count($geodata) <= 0){
-    $freegeoip = json_decode(file_get_contents('https://freegeoip.net/json/'.$_SERVER['REMOTE_ADDR']));
-    $geodata = array('country_code' => $freegeoip->country_code);
-    $groups = get_posts(array('post_type' => 'geogroups', 'numberposts' => -1));
-    $group_ids = array();
-    foreach ($groups as $group){
-        $countries = get_field('geogroups_countries', $group->ID);
-        foreach ($countries as $country){
-            $group_ids[$group->ID][] = get_field('countries_basic_code', $country);
-        }
-    }
-
-    foreach ($group_ids as $key => $data){
-        if (array_search($geodata['country_code'], $data) !== false) $geodata['group'] = $key;
-    }
-}
 
 function the_component($layout) {
     global $the_component_counter;

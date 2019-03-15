@@ -4,7 +4,7 @@
             <div class="title_margin">
                 <div class="row align-items-center no-gutters">
                     <div class="col-xs-12 col-sm-8"><p class="title_no_margin"><?php the_sub_field('com_news_title'); ?></p></div>
-                    <div class="col-xs-12 col-sm-4 col-lg-3 text-right"><a class="more open_sans margin_bottom" href="">View more</a></div>
+                    <div class="col-xs-12 col-sm-4 col-lg-3 text-right"><a class="more open_sans" href="">View more</a></div>
                 </div>
             </div>
             <div class="home_new_block">
@@ -13,11 +13,11 @@
                     <?php if (isset($news[0])): ?>
                     <div class="col-xs-12 col-sm-5">
                         <img src="<?php echo wp_get_attachment_image_src(get_field('blog_basic_image', $news[0]), 'full')[0]; ?>">
-                        <p class="home_new_title"><?php echo get_the_title($news[0]); ?></p>
+                        <a href="<?php the_permalink($news[0]); ?>"><p class="home_new_title"><?php echo get_the_title($news[0]); ?></p></a>
                     </div>
                     <?php endif; ?>
 
-                    <div class="col-xs-12 col-sm-7">
+                    <div class="col-xs-12 col-sm-7 second-section">
                         <?php foreach ($news as $i => $id): ?>
                             <?php if ($i === 0): continue; endif; ?>
                             <div class="row">
@@ -25,7 +25,7 @@
                                     <img src="<?php echo wp_get_attachment_image_src(get_field('blog_basic_image', $id), 'full')[0]; ?>">
                                 </div>
                                 <div class="col-7 col-lg-6 subitem">
-                                    <strong><?php echo get_the_title($id); ?></strong>
+                                    <a href="<?php the_permalink($id); ?>"><strong><?php echo get_the_title($id); ?></strong></a>
                                 </div>
                             </div>
                         <?php endforeach; ?>
