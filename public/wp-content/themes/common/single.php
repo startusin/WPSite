@@ -24,12 +24,10 @@
                 <div class="right_block">
                     <p class="title bold">All Policies</p>
                     <ul class="policies_menu open_sans">
-                        <li><a href="">Vision and Mission</a></li>
-                        <li><a href="">History of the organisation</a></li>
-                        <li><a href="">Structure</a></li>
-                        <li><a href="">Financial information</a></li>
-                        <li><a href="">Members</a></li>
-                        <li><a href="">Secretariat</a></li>
+                        <?php $posts = get_posts(array('numberposts' => 10)); ?>
+                        <?php foreach ($posts as $post): ?>
+                            <li><a href="<?php echo $post->guid; ?>"><?php echo $post->post_title; ?></a></li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
             </div>

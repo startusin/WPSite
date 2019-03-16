@@ -42,12 +42,10 @@ Template Name: All page
                 <div class="right_block">
                     <p class="title bold">All Publications</p>
                     <ul class="policies_menu open_sans">
-                        <li><a href="">Vision and Mission</a></li>
-                        <li><a href="">History of the organisation</a></li>
-                        <li><a href="">Structure</a></li>
-                        <li><a href="">Financial information</a></li>
-                        <li><a href="">Members</a></li>
-                        <li><a href="">Secretariat</a></li>
+                        <?php $all_pages_menu = get_field('all_page_right_menu'); ?>
+                        <?php foreach ($all_pages_menu as $all_page_menu): ?>
+                            <li><a href="<?php the_permalink($all_page_menu) ?>"><?php echo get_the_title($all_page_menu); ?></a></li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
             </div>

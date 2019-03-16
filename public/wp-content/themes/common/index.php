@@ -20,7 +20,13 @@
                     <a href="<?php the_permalink(); ?>"><p class="title_new bold arrow"><?php echo get_the_title(); ?></p></a>
                     <p class="description_new open_sans"><?php echo get_the_excerpt($blog_page_featured_publications_main); ?></p>
                     <hr>
-                    <a href="<?php echo get_the_permalink($blog_page_featured_publications_main); ?>" class="bold">Press Release</a>
+                    <?php $cats = wp_get_post_categories($blog_page_featured_publications_main, array('fields' => 'all')); ?>
+                    <?php if ($cats): ?>
+                        <a href="<?php echo get_the_permalink($blog_page_featured_publications_main); ?>" class="bold">
+                            <?php foreach ($cats as $cat): $recat[] = $cat->name; endforeach; ?>
+                            <?php echo implode(', ', $recat); ?>
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -29,17 +35,24 @@
             <?php $blog_page_featured_publications = get_field('blog_page_featured_publications', $pageID);?>
             <div class="row">
                 <?php foreach( $blog_page_featured_publications as $post): ?>
+                    <?php $recat = array(); ?>
                     <?php setup_postdata($post); ?>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
                         <div class="new_col">
                             <div class="featured_img">
                                 <?php echo wp_get_attachment_image(get_field('blog_basic_image'), 'full'); ?>
                             </div>
+                            <?php $cats = wp_get_post_categories($post->ID, array('fields' => 'all')); ?>
                             <div class="new_b">
                                 <a href="<?php the_permalink(); ?>"><p class="title_new bold sub-item-arrow"><?php the_title(); ?></p></a>
                                 <p class="description_new open_sans"><?php echo get_the_excerpt(get_the_ID()); ?></p>
                                 <hr>
-                                <a href="<?php the_permalink(); ?>" class="bold">Policy Papers</a>
+                                <?php if ($cats): ?>
+                                    <a href="<?php the_permalink(); ?>" class="bold">
+                                        <?php foreach ($cats as $cat): $recat[] = $cat->name; endforeach; ?>
+                                        <?php echo implode(', ', $recat); ?>
+                                    </a>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -55,16 +68,23 @@
             <p class="title"><?php echo get_field('blog_page_title_bottom', $pageID); ?></p>
             <?php $counter = 0; ?>
             <?php while($query->have_posts()): $query->the_post(); $counter++; ?>
+                <?php $recat = array(); ?>
                 <div class="publication_block">
                     <a href="<?php the_permalink(); ?>"><p class="title_new bold"><?php echo get_the_title(); ?></p></a>
                     <p class="description_new open_sans"><?php echo get_the_excerpt(get_the_ID()); ?></p>
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-                            <div class="date open_sans"><?php the_date('Y/m/d'); ?></div>
+                            <div class="date open_sans"><?php echo get_the_date('Y/m/d'); ?></div>
                         </div>
-                        <div class="col-xs-12 col-sm-6 col-md-8 col-lg-10">
-                            <a href="<?php the_permalink(); ?>" class="arrow">Press Release, Policy Papers</a>
-                        </div>
+                        <?php $cats = wp_get_post_categories(get_the_ID(), array('fields' => 'all')); ?>
+                        <?php if ($cats): ?>
+                            <div class="col-xs-12 col-sm-6 col-md-8 col-lg-10">
+                                <a href="<?php the_permalink(); ?>" class="arrow">
+                                    <?php foreach ($cats as $cat): $recat[] = $cat->name; endforeach; ?>
+                                    <?php echo implode(', ', $recat); ?>
+                                </a>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <?php if($counter % 2 === 0): ?>

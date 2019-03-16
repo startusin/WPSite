@@ -35,12 +35,10 @@ Template Name: Employers
                 <div class="right_block">
                     <p class="title bold">About Us</p>
                     <ul class="policies_menu open_sans">
-                        <li><a href="">Vision and Mission</a></li>
-                        <li><a href="">History of the organisation</a></li>
-                        <li><a href="">Structure</a></li>
-                        <li><a href="">Financial information</a></li>
-                        <li><a href="">Members</a></li>
-                        <li><a href="">Secretariat</a></li>
+                        <?php $employers_menu = get_field('employers_page_right_menu'); ?>
+                        <?php foreach ($employers_menu as $employer_menu): ?>
+                            <li><a href="<?php the_permalink($employer_menu) ?>"><?php echo get_the_title($employer_menu); ?></a></li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
             </div>
