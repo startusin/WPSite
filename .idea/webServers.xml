@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c637681c-8862-401f-bd5f-08c46a3d1fb7" name="opora" url="http://oporasolutions.com">
+        <fileTransfer host="oporasolutions.com" port="22" rootFolder="/home/yoolvivu" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

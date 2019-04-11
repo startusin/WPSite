@@ -1,84 +1,229 @@
 <?php get_header(); ?>
 <?php global $wp_query; ?>
+<?php global $wpdb; ?>
+<?php
+$s = esc_sql($_REQUEST['s']);
+$posts = get_posts(['posts_per_page' => -1, 'post_type'	=> 'post']);
+$categories = $_REQUEST['cats'] ?? [];
+$policys = $_REQUEST['policy'] ?? [];
+$date_value = $_REQUEST['date'] ?? false;
+$meta_query = ['relation' => 'AND'];
+$category_buider = ['relation' => 'OR'];
+$policy_buider = ['relation' => 'OR'];
 
-<div class="clear"></div>
-<div class="filter_page">
-    <div class="container">
-        <p class="title">Search</p>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
-                <?php echo get_search_form(false); ?>
+foreach ($categories as $category){
+    $category_buider[] = [
+        'key' => 'publications_basic_categories',
+        'value' => $category,
+        'compare' => 'LIKE',
+    ];
+}
+
+foreach ($policys as $policy){
+    $policy_buider[] = [
+        'key' => 'publications_basic_policies',
+        'value' => $policy,
+        'compare' => 'LIKE',
+    ];
+}
+
+$meta_query[] = $category_buider;
+$meta_query[] = $policy_buider;
+
+if ($date_value) {
+    $after = null;
+    $before = null;
+
+    if ($date_value === 'today') {
+        $after = date("Y-m-d");
+        $before = date("Y-m-d");
+    }
+
+    if ($date_value === 'week') {
+        $newdate = strtotime( '-1 week', strtotime (date("Y-m-d")));
+        $newdate = date( "Y-m-d" , $newdate);
+
+        $after = $newdate;
+        $before = date("Y-m-d");
+    }
+
+    if ($date_value === 'month') {
+        $newdate = strtotime( '-1 month', strtotime (date("Y-m-d")));
+        $newdate = date( "Y-m-d" , $newdate);
+
+        $after = $newdate;
+        $before = date("Y-m-d");
+    }
+
+    if ($date_value === 'year') {
+        $newdate = strtotime( '-1 year', strtotime (date("Y-m-d")));
+        $newdate = date( "Y-m-d" , $newdate);
+
+        $after = $newdate;
+        $before = date("Y-m-d");
+    }
+
+    $date_query = [
+        [
+            'after' => $after,
+            'before' => $before,
+            'inclusive' => true,
+        ]
+    ];
+}
+
+$posts_filter = get_posts(array(
+    'posts_per_page'	=> -1,
+    'post_type'			=> 'publications',
+    'meta_query'	=> $meta_query,
+    'date_query' => $date_value ? $date_query : false,
+));
+
+$ids = [];
+foreach ($posts_filter as $post) {
+    $ids[] = $post->ID;
+}
+
+function custom_excerpt($x, $length = 450) {
+    return strlen($x)<=$length ? $x : substr($x,0,$length) . '...';
+}
+
+$qPosts = $wpdb->get_results( 'SELECT wp_posts.*, wp_postmeta.* FROM wp_posts LEFT JOIN wp_postmeta ON wp_posts.ID = wp_postmeta.post_id WHERE wp_posts.id IN ('.implode(',', $ids).') AND (LOWER(wp_posts.post_title) LIKE "%'.strtolower($s).'%" OR LOWER(wp_postmeta.meta_value) LIKE "%'.strtolower($s).'%") GROUP BY wp_posts.id' );
+?>
+    <div class="filter_page">
+        <div class="container">
+            <div class="clear"></div>
+            <p class="title search_t">Search</p>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                    <?php echo get_search_form(false); ?>
+                </div>
             </div>
+            <p class="results open_sans"><?php echo count($qPosts); ?> results</p>
         </div>
-        <p class="results open_sans"><?php echo $wp_query->post_count; ?> results</p>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
-                <?php while ( have_posts() ): the_post(); ?>
-                    <?php global $post; ?>
-                    <?php $categories = wp_get_post_categories( $post->ID, array('fields' => 'all') ); ?>
-                    <?php $catgs = array(); ?>
-                    <?php foreach ($categories as $category): $catgs[] = $category->name; endforeach; ?>
-                    <div class="publication_block">
-                        <p class="title_new bold"><a class="link_title" href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></p>
-                        <p class="description_new open_sans"><?php echo get_the_excerpt(); ?></p>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-                                <div class="date open_sans"><?php echo get_the_date('d/m/Y'); ?></div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-8 col-lg-10">
-                                <a class="category-list" href="<?php echo get_permalink(); ?>" class="arrow"><?php echo implode($catgs, ','); ?></a>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
+                    <?php foreach( $qPosts as $post ):setup_postdata( $post ); ?>
+                        <?php global $post; ?>
+                        <?php $categories = wp_get_post_categories( $post->ID, array('fields' => 'all') ); ?>
+                        <?php $catgs = array(); ?>
+                        <?php foreach ($categories as $category): $catgs[] = $category->name; endforeach; ?>
+                        <div class="publication_block">
+                            <p class="title_new bold"><a class="link_title" href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></p>
+                            <a class="link_title" href="<?php echo get_permalink(); ?>">
+                                <p class="description_new open_sans"><?php echo custom_excerpt(strip_tags(get_field('publications_basic_content'))); ?></p>
+                            </a>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+                                    <div class="date open_sans"><?php echo get_the_date('d/m/Y'); ?></div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-8 col-lg-10">
+                                    <div class="сategory_r">
+                                        <?php $post_сategories = get_field('publications_basic_categories'); ?>
+                                        <?php if( $post_сategories ): ?>
+                                            <?php
+                                            $links = [];
+                                            foreach($post_сategories as $сategory)
+                                                $links[] = '<a href="'.get_permalink().'" class="category-list arrow bold">'.get_the_title($сategory).'</a>';
+                                            echo join(', ',$links);
+                                            ?>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <?php endwhile; ?>
-                <?php echo paginate_links(); ?>
-
-                <div class="clear"></div>
+                    <?php endforeach; ?>
+                    <?php wp_reset_postdata(); ?>
+<!--                    <div class="open_sans bold href_right margin_top">-->
+<!--                        --><?php //echo paginate_links(['prev_text' => '', 'next_text' => 'Show more']); ?>
+<!--                    </div>-->
+                    <div class="clear"></div>
+                </div>
             </div>
         </div>
+        <div class="filter">
+            <form name="filter" id="filter" method="get">
+                <input type="hidden" name="s" value="<?php echo get_search_query(); ?>">
+                <p class="filter_title bold" data-toggle="collapse" data-target="#f_category" aria-expanded="true">Filters by category</p>
+                <div id="f_category" class="collapse show">
+                    <a href="" id="select_all_categorys" class="select_all open_sans">Select All</a>
+                    <ul class="filter_list open_sans">
+                        <?php $categorys = get_posts(['numberposts' => -1, 'post_type' => 'categories']); ?>
+                        <?php foreach ($categorys as $catg): ?>
+                            <li>
+                                <label class="checkbox" for="<?php echo $catg->ID ?>"><?php echo $catg->post_title ?>
+                                    <input
+                                            type="checkbox"
+                                            name="cats[]"
+                                            id="<?php echo $catg->ID ?>"
+                                            value="<?php echo $catg->ID ?>"
+                                            <?php if (!empty($_REQUEST['cats']) && in_array($catg->ID, $_REQUEST['cats'])): ?>checked<?php endif; ?>
+                                    >
+                                    <span class="checkmark"></span>
+                                </label>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <p class="filter_title bold" data-toggle="collapse" data-target="#f_policy" aria-expanded="true">Filters by policy</p>
+                <div id="f_policy" class="collapse show">
+                    <a href="#" id="select_all_policies" class="select_all open_sans">Select All</a>
+                    <ul class="filter_list open_sans">
+                        <?php $policys = get_posts(['numberposts' => -1, 'post_type' => 'post', 'orderby'=> 'title', 'order' => 'ASC']); ?>
+                        <?php foreach ($policys as $policy): ?>
+                            <li>
+                                <label class="checkbox" for="<?php echo $policy->ID ?>"><?php echo $policy->post_title ?>
+                                    <input
+                                            type="checkbox"
+                                            name="policy[]"
+                                            id="<?php echo $policy->ID ?>"
+                                            value="<?php echo $policy->ID ?>"
+                                            <?php if (!empty($_REQUEST['policy']) && in_array($policy->ID, $_REQUEST['policy'])): ?>checked<?php endif; ?>
+                                    >
+                                    <span class="checkmark"></span>
+                                </label>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <p class="filter_title bold collapsed" data-toggle="collapse" data-target="#f_date" aria-expanded="false">Filters by date</p>
+                <div id="f_date" class="collapse">
+                    <ul class="filter_list open_sans">
+                        <li>
+                            <label class="checkbox"">Today
+                                <input type="checkbox" name="date" value="today"<?php if ($_REQUEST['date'] === 'today'): ?> checked<?php endif; ?>>
+                                <span class="checkmark"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox"">Last Week
+                                <input type="checkbox" name="date" value="week"<?php if ($_REQUEST['date'] === 'week'): ?> checked<?php endif; ?>>
+                                <span class="checkmark"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox"">Last Month
+                                <input type="checkbox" name="date" value="month"<?php if ($_REQUEST['date'] === 'month'): ?> checked<?php endif; ?>>
+                                <span class="checkmark"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox"">Last Year
+                                <input type="checkbox" name="date" value="year"<?php if ($_REQUEST['date'] === 'year'): ?> checked<?php endif; ?>>
+                                <span class="checkmark"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox"">Since Beginning
+                                <input type="checkbox" name="date" value="all"<?php if ($_REQUEST['date'] === 'all' || !$_REQUEST['date']): ?> checked<?php endif; ?>>
+                                <span class="checkmark"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <button type="submit" class="btn apply">Apply</button>
+            </form>
+        </div>
     </div>
-
-
-    <div class="filter">
-        <p class="filter_title bold" data-toggle="collapse" data-target="#f_policy">Filters by policy</p>
-        <div id="f_policy" class="collapse show">
-            <a href="" class="select_all open_sans">Select All</a>
-            <ul class="filter_list open_sans">
-                <li><input type="checkbox"><label>Active and Healthy Ageing</label></li>
-                <li><input type="checkbox"><label>Active and Healthy Ageing</label></li>
-                <li><input type="checkbox"><label>Active and Healthy Ageing</label></li>
-                <li><input type="checkbox"><label>Active and Healthy Ageing</label></li>
-                <li><input type="checkbox"><label>Active and Healthy Ageing</label></li>
-                <li><input type="checkbox"><label>Active and Healthy Ageing</label></li>
-                <li><input type="checkbox"><label>Active and Healthy Ageing</label></li>
-                <li><input type="checkbox"><label>Active and Healthy Ageing</label></li>
-                <li><input type="checkbox"><label>Active and Healthy Ageing</label></li>
-                <li><input type="checkbox"><label>Active and Healthy Ageing</label></li>
-            </ul>
-        </div>
-
-        <p class="filter_title bold" data-toggle="collapse" data-target="#f_category">Filters by category</p>
-        <div id="f_category" class="collapse show">
-            <a href="" class="select_all open_sans">Select All</a>
-            <ul class="filter_list open_sans">
-                <li><input type="checkbox"><label>Active and Healthy Ageing</label></li>
-                <li><input type="checkbox"><label>Active and Healthy Ageing</label></li>
-                <li><input type="checkbox"><label>Active and Healthy Ageing</label></li>
-            </ul>
-        </div>
-
-        <p class="filter_title bold" data-toggle="collapse" data-target="#f_date">Filters by date</p>
-        <div id="f_date" class="collapse">
-            <ul class="filter_list open_sans">
-                <li><input type="checkbox"><label>Active and Healthy Ageing</label></li>
-                <li><input type="checkbox"><label>Active and Healthy Ageing</label></li>
-                <li><input type="checkbox"><label>Active and Healthy Ageing</label></li>
-            </ul>
-        </div>
-
-        <button type="submit" class="btn apply">Apply</button>
-    </div>
-</div>
 <?php get_footer(); ?>

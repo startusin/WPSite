@@ -1,10 +1,10 @@
 jQuery( document ).ready(function( $ ) {
-	"use strict"; // this function is executed in strict mode	
-	 
-	
+	"use strict"; // this function is executed in strict mode
+
+
 	/* ------------------------------------------------------ */
 	/*  1. SHRINK HEADER JS
-	/* ------------------------------------------------------ */ 
+	/* ------------------------------------------------------ */
 	var shrinkHeader=1;
 		$(window).scroll(function(){
 		var scroll=getCurrentScroll();
@@ -17,7 +17,7 @@ jQuery( document ).ready(function( $ ) {
 	function getCurrentScroll(){
 		return window.pageYOffset;
 	}
-	
+
 	var sections = $('section')
 	  , nav = $('nav')
 	  , nav_height = nav.outerHeight();
@@ -30,7 +30,7 @@ jQuery( document ).ready(function( $ ) {
 			if (cur_pos >= top && cur_pos <= bottom) {
 				nav.find('a').removeClass('active');
 				sections.removeClass('active');
-		  
+
 				$(this).addClass('active');
 				nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
 			}
@@ -38,7 +38,7 @@ jQuery( document ).ready(function( $ ) {
 	});
 	/* --------------------------- */
 	/*  2. MENU SMOOTH SCROLLING JS
-	/* --------------------------- */ 
+	/* --------------------------- */
 	$(function() {
          $('a[href*="#"]:not([data-toggle="tab"])').on('click', function() {
              if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -53,33 +53,52 @@ jQuery( document ).ready(function( $ ) {
              }
          });
      });
-	
-	$('.contact-us-form').submit(function(e){
-		var name = $(".name-fld", this).val();
-		var email = $(".email-fld", this).val();
-		var phone = $(".phone-fld", this).val();
-		var message = $("#message", this).val();
 
-		if (!name || !email) {
-			alert('Please fill required fields (name, email)');
-			return false;
+	$('#select_all_categorys').click(function (e) {
+		if ($(this).data('selected')) {
+            $(this).html('Select All');
+            $(this).data('selected', false);
+
+            $('#f_category input[type=checkbox]').each(function(){
+                $(this).attr('checked', false);
+            });
+		} else {
+            $(this).html('Unselect All');
+            $(this).data('selected', true);
+
+            $('#f_category input[type=checkbox]').each(function(){
+                $(this).attr('checked', true);
+            });
 		}
 
-		var dataString = 'name='+ name + '&email=' + email + '&phone=' + phone + '&message=' + message;
-		   
-		$.ajax({
-		     type: "POST",
-		     url: "sender.php",
-		     data: dataString,
-		     success: function() {
-				 alert('Thank you! We will contact with you soon.');
-		     }
-		 });
-		 
-		 e.preventDefault();
-	});
+		e.preventDefault();
+    });
 
-});	
+	$('#select_all_policies').click(function (e) {
+        if ($(this).data('selected')) {
+            $(this).html('Select All');
+            $(this).data('selected', false);
+
+            $('#f_policy input[type=checkbox]').each(function(){
+                $(this).attr('checked', false);
+            });
+        } else {
+            $(this).html('Unselect All');
+            $(this).data('selected', true);
+
+            $('#f_policy input[type=checkbox]').each(function(){
+                $(this).attr('checked', true);
+            });
+        }
+
+        e.preventDefault();
+    });
+
+    $('#f_date input[type=checkbox]').click(function (e) {
+        $('#f_date input[type=checkbox]').attr('checked', false);
+        $(this).attr('checked', true);
+    });
+});
 
 
 

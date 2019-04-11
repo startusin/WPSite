@@ -74,7 +74,7 @@
             "return_format": "id"
         },
         {
-            "key": "field_5c8d24aa4698c",
+            "key": "field_5c8bbe2397d8b",
             "label": "Right Menu",
             "name": "employers_page_right_menu",
             "type": "relationship",
@@ -92,9 +92,7 @@
             ],
             "taxonomy": [],
             "filters": [
-                "search",
-                "post_type",
-                "taxonomy"
+                "search"
             ],
             "elements": "",
             "min": "",
@@ -119,5 +117,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1552756540
+    "modified": 1552662081
 }

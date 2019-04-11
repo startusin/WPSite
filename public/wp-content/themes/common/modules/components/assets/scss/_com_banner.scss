@@ -1,8 +1,8 @@
-.component-com_banner {
-  margin: 25px 0;
+.component-com_banner.component-com_banner {
+  margin: 0;
 
   .banner {
-    height: 360px;
+    height: 530px;
     background: no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
@@ -13,6 +13,7 @@
     width: 100%;
     margin-top: 30px;
     position: relative;
+    font-family: 'Open Sans', sans-serif;
 
     .description {
       font-size: 30px;
@@ -21,8 +22,64 @@
       line-height: 1.4;
 
       @media (min-width: $screen-md-min) {
-        font-size: 34px;
+        text-transform: uppercase;
+        line-height: 1.2;
+        font-size: 48px;
       }
+    }
+
+    .subdescription {
+      font-size: 21px;
+      margin-top: 15px;
+      font-weight: 300;
+      line-height: 34px;
+      margin-left: 4px;
+      margin-bottom: 34px;
+    }
+
+    .more {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      position: relative;
+      letter-spacing: 0.04px;
+      margin-bottom: 0;
+      margin-top: 20px;
+      display: block;
+
+      a {
+        color: #fff;
+        font-weight: 400;
+        font-size: 17px;
+      }
+
+      @media (min-width: $screen-sm-min) {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 4px;
+        margin-right: -30px;
+      }
+
+      &:before{
+        content: '';
+        width: 16px;
+        height: 16px;
+        margin-top: -3px;
+        font-size: 20px;
+        display: inline-block;
+        background: url(../img/more_w.svg) no-repeat center;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        -ms-background-size: cover;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+    }
+
+    @media (min-width: $screen-sm-min) {
+      padding-top: 130px;
     }
   }
 }

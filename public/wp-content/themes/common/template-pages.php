@@ -4,6 +4,7 @@ Template Name: All page
 */
 ?>
 <?php get_header(); ?>
+<?php $page_id = get_the_ID(); ?>
     <?php if (get_field('all_page_layout') === 'banner'): ?>
         <div class="banner d-flex flex-row justify-content-center align-items-center" style="background-image: url(<?php echo wp_get_attachment_image_src(get_field('all_file_image'), 'full')[0]; ?>)"></div>
     <?php endif; ?>
@@ -14,10 +15,10 @@ Template Name: All page
             <div class="row align-items-center">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                     <p class="title_detail"><?php the_field('all_page_title'); ?></p>
-                    <a href="" class="bold">Press Release</a>
+                    <a href="" class="bold green">Press Release</a>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                    <div class="center">
+                    <div class="padding-download">
                         <?php $file = get_field('all_page_file');?>
                         <a href="<?php echo $file['url']; ?>" class="download open_sans">Download</a>
                     </div>
@@ -29,22 +30,36 @@ Template Name: All page
 
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 padding-right">
                 <p class="title"><?php echo get_the_title(); ?></p>
-                <p class="text_after open_sans">
+                <div class="text_after open_sans">
+                    <?php if (get_field('all_page_bold_title')): ?>
+                        <div class="blue twenty"><?php the_field('all_page_bold_title'); ?></div>
+                    <?php endif; ?>
                     <?php
                     $content_post = get_post(get_the_ID());
                     echo $content_post->post_content;
                     ?>
-                </p>
+                </div>
+
+                <?php if(get_field('all_page_download')): ?>
+                    <hr>
+                    <div class="title bold downloads-title">Downloads</div>
+                    <?php while(has_sub_field('all_page_download')): ?>
+                        <?php $file = get_sub_field('all_page_download_file');?>
+                        <a href="<?php echo $file['url']; ?>" class="url open_sans folder"><?php echo $file['filename']; ?></a>
+                    <?php endwhile; ?>
+                <?php endif; ?>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
                 <div class="right_block">
-                    <p class="title bold">All Publications</p>
+                    <p class="title bold right_title">About Us</p>
                     <ul class="policies_menu open_sans">
-                        <?php $all_pages_menu = get_field('all_page_right_menu'); ?>
+                        <?php $all_pages_menu = get_field('all_page_menu'); ?>
                         <?php foreach ($all_pages_menu as $all_page_menu): ?>
-                            <li><a href="<?php the_permalink($all_page_menu) ?>"><?php echo get_the_title($all_page_menu); ?></a></li>
+                            <li>
+                                <a href="<?php the_permalink($all_page_menu); ?>" class="page_<?php echo $all_page_menu; ?>"><?php echo get_the_title($all_page_menu); ?></a>
+                            </li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -52,4 +67,11 @@ Template Name: All page
         </div>
     </div>
     <div class="clear"></div>
+
+<style>
+    .page_<?php echo $page_id; ?> {
+        color: #245590 !important;
+        font-weight: bold !important;
+    }
+</style>
 <?php get_footer(); ?>

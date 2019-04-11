@@ -3,6 +3,7 @@
 Template Name: Blog
 */
 ?>
+
 <?php get_header(); ?>
     <div class="banner_about" style="background: url(<?php echo wp_get_attachment_image_src(get_field('employers_page_banner'), 'full')[0]; ?>);"></div>
 

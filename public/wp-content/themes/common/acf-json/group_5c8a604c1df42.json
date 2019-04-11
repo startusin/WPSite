@@ -141,7 +141,7 @@
             "return_format": "object"
         },
         {
-            "key": "field_5c8d2512658c8",
+            "key": "field_5c8bc0aef1037",
             "label": "Right Menu",
             "name": "all_page_right_menu",
             "type": "relationship",
@@ -159,9 +159,7 @@
             ],
             "taxonomy": [],
             "filters": [
-                "search",
-                "post_type",
-                "taxonomy"
+                "search"
             ],
             "elements": "",
             "min": "",
@@ -186,5 +184,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1552753983
+    "modified": 1552662762
 }

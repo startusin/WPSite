@@ -14,22 +14,11 @@ function search_filter($query) {
 }
 add_filter('pre_get_posts','search_filter');
 
-if( function_exists('acf_add_options_page') ) {
-    acf_add_options_page(array(
-        'page_title' 	=> 'Theme General Settings',
-        'menu_title'	=> 'Theme Settings',
-        'menu_slug' 	=> 'theme-general-settings',
-        'capability'	=> 'edit_posts',
-        'redirect'		=> false
-    ));
-    acf_add_options_sub_page(array(
-        'page_title' 	=> 'Theme Header Settings',
-        'menu_title'	=> 'Header',
-        'parent_slug'	=> 'theme-general-settings',
-    ));
-    acf_add_options_sub_page(array(
-        'page_title' 	=> 'Theme Footer Settings',
-        'menu_title'	=> 'Footer',
-        'parent_slug'	=> 'theme-general-settings',
-    ));
+function change_post_menu_label() {
+    global $menu;
+    global $submenu;
+    $menu[5][0] = 'Policies';
+    $submenu['edit.php'][5][0] = 'All Policies';
+    $submenu['edit.php'][10][0] = 'Add Policy';
 }
+add_action( 'admin_menu', 'change_post_menu_label' );

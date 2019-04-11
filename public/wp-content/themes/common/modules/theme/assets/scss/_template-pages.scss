@@ -1,4 +1,8 @@
 .page-template-template-pages {
+  header {
+    border: 0;
+    padding: 0;
+  }
   .banner {
     width: 100%;
     height: 240px;
@@ -8,15 +12,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
-    margin-bottom: 2rem;
-    margin-top: 1.5rem;
-  }
-
-  .title {
-    line-height: 37px;
-  }
-
-  .title_detail {
-    line-height: 39px;
+    margin-bottom: 50px;
+    margin-top: 35px;
   }
 }

@@ -30,9 +30,14 @@
 
   .country_description {
     font-weight: 600;
+    margin-bottom: 15px;
 
     &.first {
       margin-top: 15px;
+    }
+
+    p {
+      margin: 0;
     }
   }
 }

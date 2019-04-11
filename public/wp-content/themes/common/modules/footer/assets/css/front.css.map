@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,MAAO;EACL,WAAW,EAAE,uBAAuB",
+"sources": ["file:///Volumes/Code/wpsite/public/wp-content/themes/common/modules/footer/assets/scss/_footer.scss"],
 "names": [],
 "file": "front.css"
 }

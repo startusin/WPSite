@@ -1,0 +1,23 @@
+<svg width="12" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+ <title>B186D41C-14B7-4218-B7ED-A0150855D4BB</title>
+ <desc>Created with sketchtool.</desc>
+ <defs>
+  <polygon points="7 10 12 15 17 10" id="path-1"/>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="26" width="14" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g fill-rule="evenodd" fill="none" id="Symbols">
+   <g id="Navigation/ic_arrow_drop_down">
+    <mask id="mask-2">
+     <use id="svg_1" xlink:href="#path-1"/>
+    </mask>
+    <use x="-3.076176" y="-1.161009" stroke="null" transform="rotate(-90 5.999847412109376,11.999999046325684) matrix(2.349334819414281,0,0,2.349334819414281,-14.964953117982276,-14.639141912624666) " xlink:href="#path-1" fill="#245590" id="Mask"/>
+   </g>
+  </g>
+ </g>
+</svg>
