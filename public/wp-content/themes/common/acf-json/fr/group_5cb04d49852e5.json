@@ -1,9 +1,9 @@
 {
-    "key": "group_5cabb264bb2dd",
+    "key": "group_5cb04d49852e5",
     "title": "Employers Basic",
     "fields": [
         {
-            "key": "field_5cabb264c10a1",
+            "key": "field_5cb04d498be52",
             "label": "Position",
             "name": "employers_basic_position",
             "type": "text",
@@ -24,7 +24,7 @@
             "disabled": 0
         },
         {
-            "key": "field_5cabb264c10ae",
+            "key": "field_5cb04d498be60",
             "label": "Text",
             "name": "employers_basic_text",
             "type": "wysiwyg",
@@ -42,7 +42,7 @@
             "media_upload": 1
         },
         {
-            "key": "field_5cabb264c10b9",
+            "key": "field_5cb04d498be6b",
             "label": "Photo",
             "name": "employers_basic_photo",
             "type": "image",
@@ -83,5 +83,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1554756196
+    "modified": 1555057993
 }

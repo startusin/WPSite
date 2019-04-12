@@ -135,9 +135,6 @@ $qPosts = $wpdb->get_results( 'SELECT wp_posts.*, wp_postmeta.* FROM wp_posts LE
                         </div>
                     <?php endforeach; ?>
                     <?php wp_reset_postdata(); ?>
-<!--                    <div class="open_sans bold href_right margin_top">-->
-<!--                        --><?php //echo paginate_links(['prev_text' => '', 'next_text' => 'Show more']); ?>
-<!--                    </div>-->
                     <div class="clear"></div>
                 </div>
             </div>
@@ -145,6 +142,7 @@ $qPosts = $wpdb->get_results( 'SELECT wp_posts.*, wp_postmeta.* FROM wp_posts LE
         <div class="filter">
             <form name="filter" id="filter" method="get">
                 <input type="hidden" name="s" value="<?php echo get_search_query(); ?>">
+                <input type="hidden" name="lang" value="<?php echo $_REQUEST['lang'] ?? 'en'; ?>">
                 <p class="filter_title bold" data-toggle="collapse" data-target="#f_category" aria-expanded="true">Filters by category</p>
                 <div id="f_category" class="collapse show">
                     <a href="" id="select_all_categorys" class="select_all open_sans">Select All</a>

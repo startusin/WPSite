@@ -278,18 +278,16 @@
 }
 .component-com_about .pharmacists_block .pretitle {
   color: #5cb113;
-  font-size: 24px;
-  margin-bottom: 10px;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 32px;
+  margin-bottom: 15px;
 }
 .component-com_about .pharmacists_block .more {
   color: #245590;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   position: relative;
   letter-spacing: 0.04px;
   margin-top: 25px;
-  font-family: 'Open Sans', sans-serif;
 }
 .component-com_about .pharmacists_block .more:before {
   content: '';

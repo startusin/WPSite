@@ -6,7 +6,7 @@
                 <div class="col-8">
                     <p class="title_no_margin"><?php the_sub_field('com_services_title'); ?></p>
                 </div>
-                <div class="col-4 text-right"><a class="more open_sans" href="/blog">See all</a></div>
+                <div class="col-4 text-right"><a class="more open_sans" href="<?php the_sub_field('com_services_link_url'); ?>">See all</a></div>
             </div>
         </div>
         <div class="policies_sider">

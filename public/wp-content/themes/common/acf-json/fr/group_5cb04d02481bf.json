@@ -1,9 +1,9 @@
 {
-    "key": "group_5cacbc9a1642f",
+    "key": "group_5cb04d02481bf",
     "title": "Publications Basic",
     "fields": [
         {
-            "key": "field_5cacbc9a1e136",
+            "key": "field_5cb04d024e2f9",
             "label": "Layout",
             "name": "publications_basic_layout",
             "type": "radio",
@@ -25,7 +25,7 @@
             "layout": "horizontal"
         },
         {
-            "key": "field_5cacbc9a1e165",
+            "key": "field_5cb04d024e307",
             "label": "Title",
             "name": "publications_basic_title",
             "type": "text",
@@ -34,7 +34,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5cacbc9a1e136",
+                        "field": "field_5cb04d024e2f9",
                         "operator": "==",
                         "value": "file"
                     }
@@ -54,7 +54,7 @@
             "disabled": 0
         },
         {
-            "key": "field_5cacbc9a1e179",
+            "key": "field_5cb04d024e313",
             "label": "Content",
             "name": "publications_basic_content",
             "type": "wysiwyg",
@@ -72,7 +72,7 @@
             "media_upload": 1
         },
         {
-            "key": "field_5cacbc9a1e184",
+            "key": "field_5cb04d024e31e",
             "label": "Top Title",
             "name": "publications_basic_top_title",
             "type": "wysiwyg",
@@ -90,7 +90,7 @@
             "media_upload": 1
         },
         {
-            "key": "field_5cacbc9a1e18f",
+            "key": "field_5cb04d024e32a",
             "label": "File",
             "name": "publications_basic_file",
             "type": "file",
@@ -99,7 +99,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5cacbc9a1e136",
+                        "field": "field_5cb04d024e2f9",
                         "operator": "==",
                         "value": "file"
                     }
@@ -117,7 +117,7 @@
             "mime_types": ""
         },
         {
-            "key": "field_5cacbc9a1e19b",
+            "key": "field_5cb04d024e335",
             "label": "Banner Image",
             "name": "publications_basic_image",
             "type": "image",
@@ -126,7 +126,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5cacbc9a1e136",
+                        "field": "field_5cb04d024e2f9",
                         "operator": "==",
                         "value": "banner"
                     }
@@ -149,7 +149,7 @@
             "mime_types": ""
         },
         {
-            "key": "field_5cacbc9a1e1a6",
+            "key": "field_5cb04d024e340",
             "label": "Download",
             "name": "publications_basic_download",
             "type": "repeater",
@@ -168,7 +168,7 @@
             "button_label": "Add Row",
             "sub_fields": [
                 {
-                    "key": "field_5cacbc9a43c39",
+                    "key": "field_5cb04d026ab24",
                     "label": "File",
                     "name": "publications_basic_download_file",
                     "type": "file",
@@ -189,7 +189,7 @@
             ]
         },
         {
-            "key": "field_5cacbc9a1e1b1",
+            "key": "field_5cb04d024e34c",
             "label": "Image",
             "name": "publications_basic_image",
             "type": "image",
@@ -213,7 +213,7 @@
             "mime_types": ""
         },
         {
-            "key": "field_5cacbc9a1e1bc",
+            "key": "field_5cb04d024e357",
             "label": "Categories",
             "name": "publications_basic_categories",
             "type": "relationship",
@@ -238,7 +238,7 @@
             "return_format": "id"
         },
         {
-            "key": "field_5cacbc9a1e1c7",
+            "key": "field_5cb04d024e363",
             "label": "Policies",
             "name": "publications_basic_policies",
             "type": "relationship",
@@ -280,5 +280,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1554824346
+    "modified": 1555057922
 }

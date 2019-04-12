@@ -1,9 +1,9 @@
 {
-    "key": "group_5cabaa24d746c",
+    "key": "group_5cb04d136b453",
     "title": "Footer",
     "fields": [
         {
-            "key": "field_5cabaa24ddfd9",
+            "key": "field_5cb04d1371af8",
             "label": "First Block Title",
             "name": "footer_first_block_title",
             "type": "text",
@@ -24,7 +24,7 @@
             "disabled": 0
         },
         {
-            "key": "field_5cabaa24ddff6",
+            "key": "field_5cb04d1371b21",
             "label": "First Block Description",
             "name": "footer_first_block_description",
             "type": "textarea",
@@ -45,7 +45,7 @@
             "disabled": 0
         },
         {
-            "key": "field_5cabaa24de025",
+            "key": "field_5cb04d1371b3e",
             "label": "First Block Email",
             "name": "footer_first_block_email",
             "type": "text",
@@ -66,7 +66,7 @@
             "disabled": 0
         },
         {
-            "key": "field_5cabaa24de032",
+            "key": "field_5cb04d1371b52",
             "label": "First Block Text Before Email",
             "name": "footer_first_block_text_before_email",
             "type": "text",
@@ -87,7 +87,7 @@
             "disabled": 0
         },
         {
-            "key": "field_5cabaa24de04a",
+            "key": "field_5cb04d1371b7b",
             "label": "Second Block Title",
             "name": "footer_second_block_title",
             "type": "text",
@@ -108,7 +108,7 @@
             "disabled": 0
         },
         {
-            "key": "field_5cabaa24de05d",
+            "key": "field_5cb04d1371b99",
             "label": "Second Block Menu",
             "name": "footer_second_block_menu",
             "type": "repeater",
@@ -127,7 +127,7 @@
             "button_label": "Add Row",
             "sub_fields": [
                 {
-                    "key": "field_5cabaa2503988",
+                    "key": "field_5cb04d138ad58",
                     "label": "Title",
                     "name": "footer_second_block_menu_title",
                     "type": "text",
@@ -148,7 +148,7 @@
                     "disabled": 0
                 },
                 {
-                    "key": "field_5cabaa2503996",
+                    "key": "field_5cb04d138ad7d",
                     "label": "Url",
                     "name": "footer_second_block_menu_url",
                     "type": "post_object",
@@ -168,7 +168,7 @@
                     "ui": 1
                 },
                 {
-                    "key": "field_5cabaa25039a3",
+                    "key": "field_5cb04d138ad92",
                     "label": "Custom Url",
                     "name": "footer_second_block_menu_url_custom",
                     "type": "text",
@@ -191,7 +191,7 @@
             ]
         },
         {
-            "key": "field_5cabaa24de072",
+            "key": "field_5cb04d1371bac",
             "label": "Third Block Title",
             "name": "footer_third_block_title",
             "type": "text",
@@ -212,7 +212,7 @@
             "disabled": 0
         },
         {
-            "key": "field_5cabaa24de07e",
+            "key": "field_5cb04d1371bc5",
             "label": "Third Block Social Network",
             "name": "footer_third_block_social_network",
             "type": "repeater",
@@ -231,7 +231,7 @@
             "button_label": "Add Row",
             "sub_fields": [
                 {
-                    "key": "field_5cabaa251baed",
+                    "key": "field_5cb04d13a3572",
                     "label": "Icon",
                     "name": "footer_third_block_social_network_icon",
                     "type": "text",
@@ -252,7 +252,7 @@
                     "disabled": 0
                 },
                 {
-                    "key": "field_5cabaa251bafb",
+                    "key": "field_5cb04d13a3580",
                     "label": "Url",
                     "name": "footer_third_block_social_network_url",
                     "type": "url",
@@ -270,7 +270,7 @@
             ]
         },
         {
-            "key": "field_5cabaa24de095",
+            "key": "field_5cb04d1371be3",
             "label": "Footer Bottom",
             "name": "footer_third_block_bottom_text",
             "type": "wysiwyg",
@@ -305,5 +305,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1554754084
+    "modified": 1555057939
 }

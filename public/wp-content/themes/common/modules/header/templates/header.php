@@ -15,7 +15,7 @@
     </div>
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="/?lang=<?php echo $_REQUEST['lang'] ?? 'en'; ?>">
                 <?php echo wp_get_attachment_image(get_field('header_logo', 'option'), 'full'); ?>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +37,7 @@
                                         <?php $arr = [1 => [], 2 => [], 3 => []]; ?>
                                         <?php $subIndex = 0; ?>
                                         <?php foreach($rows as $row): $subIndex++; ?>
-                                            <?php $arr[$subIndex][] = ['link' => $row->guid, 'name' => $row->post_title]; ?>
+                                            <?php $arr[$subIndex][] = ['link' => get_the_permalink($row->ID), 'name' => $row->post_title]; ?>
                                             <?php if($subIndex === 3): $subIndex = 0; endif; ?>
                                         <?php endforeach; ?>
 

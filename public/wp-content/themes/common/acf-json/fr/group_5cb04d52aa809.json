@@ -1,9 +1,9 @@
 {
-    "key": "group_597eee0624519",
+    "key": "group_5cb04d52aa809",
     "title": "Components",
     "fields": [
         {
-            "key": "field_578fed08a205f",
+            "key": "field_5cb04d52b1d10",
             "label": "Components",
             "name": "components",
             "type": "flexible_content",
@@ -26,7 +26,7 @@
                     "display": "row",
                     "sub_fields": [
                         {
-                            "key": "field_59ff5e18cab9e",
+                            "key": "field_5cb04d52b6092",
                             "label": "Background",
                             "name": "com_banner_background",
                             "type": "image",
@@ -50,7 +50,7 @@
                             "mime_types": ""
                         },
                         {
-                            "key": "field_5c0e1830f1908",
+                            "key": "field_5cb04d52b60a1",
                             "label": "Title",
                             "name": "com_banner_title",
                             "type": "text",
@@ -71,7 +71,7 @@
                             "disabled": 0
                         },
                         {
-                            "key": "field_5caed98315220",
+                            "key": "field_5cb04d52b60ac",
                             "label": "Sub Title",
                             "name": "com_banner_subtitle",
                             "type": "text",
@@ -92,7 +92,7 @@
                             "disabled": 0
                         },
                         {
-                            "key": "field_5caed99415221",
+                            "key": "field_5cb04d52b60b7",
                             "label": "Link Text",
                             "name": "com_banner_link_text",
                             "type": "text",
@@ -113,7 +113,7 @@
                             "disabled": 0
                         },
                         {
-                            "key": "field_5caed9a615223",
+                            "key": "field_5cb04d52b60c2",
                             "label": "Link Url",
                             "name": "com_banner_link_url",
                             "type": "text",
@@ -144,7 +144,7 @@
                     "display": "row",
                     "sub_fields": [
                         {
-                            "key": "field_5c83b5ff24418",
+                            "key": "field_5cb04d52b60cd",
                             "label": "Title",
                             "name": "com_news_title",
                             "type": "text",
@@ -165,7 +165,7 @@
                             "disabled": 0
                         },
                         {
-                            "key": "field_5cb017e3db063",
+                            "key": "field_5cb04d52b60d8",
                             "label": "Link Url",
                             "name": "com_news_url",
                             "type": "text",
@@ -186,7 +186,7 @@
                             "disabled": 0
                         },
                         {
-                            "key": "field_5c83bc9824419",
+                            "key": "field_5cb04d52b60e3",
                             "label": "News",
                             "name": "com_news_news",
                             "type": "relationship",
@@ -211,7 +211,7 @@
                             "return_format": "id"
                         },
                         {
-                            "key": "field_5c83bd042441a",
+                            "key": "field_5cb04d52b60ee",
                             "label": "Tips",
                             "name": "com_news_tips",
                             "type": "repeater",
@@ -230,7 +230,7 @@
                             "button_label": "Add Row",
                             "sub_fields": [
                                 {
-                                    "key": "field_5c83bd192441b",
+                                    "key": "field_5cb04d52dc5d5",
                                     "label": "Title",
                                     "name": "com_news_tips_title",
                                     "type": "text",
@@ -251,7 +251,7 @@
                                     "disabled": 0
                                 },
                                 {
-                                    "key": "field_5c83bd292441c",
+                                    "key": "field_5cb04d52dc5e4",
                                     "label": "Description",
                                     "name": "com_news_tips_description",
                                     "type": "wysiwyg",
@@ -281,7 +281,7 @@
                     "display": "row",
                     "sub_fields": [
                         {
-                            "key": "field_5c83c0682441e",
+                            "key": "field_5cb04d52b60f9",
                             "label": "Title",
                             "name": "com_about_title",
                             "type": "text",
@@ -302,7 +302,7 @@
                             "disabled": 0
                         },
                         {
-                            "key": "field_5c83d90424425",
+                            "key": "field_5cb04d52b6104",
                             "label": "Text",
                             "name": "com_about_text",
                             "type": "wysiwyg",
@@ -320,7 +320,7 @@
                             "media_upload": 1
                         },
                         {
-                            "key": "field_5c83d95d24426",
+                            "key": "field_5cb04d52b610f",
                             "label": "Link Text",
                             "name": "com_about_link_text",
                             "type": "text",
@@ -341,7 +341,7 @@
                             "disabled": 0
                         },
                         {
-                            "key": "field_5c83d96c24427",
+                            "key": "field_5cb04d52b611a",
                             "label": "Link Url",
                             "name": "com_about_link_url",
                             "type": "text",
@@ -362,7 +362,7 @@
                             "disabled": 0
                         },
                         {
-                            "key": "field_5c83d98f24428",
+                            "key": "field_5cb04d52b6124",
                             "label": "Image",
                             "name": "com_about_image",
                             "type": "image",
@@ -396,7 +396,7 @@
                     "display": "row",
                     "sub_fields": [
                         {
-                            "key": "field_5caee5143dd13",
+                            "key": "field_5cb04d52b612f",
                             "label": "Title",
                             "name": "com_stats_title",
                             "type": "text",
@@ -417,7 +417,7 @@
                             "disabled": 0
                         },
                         {
-                            "key": "field_5caee5213dd14",
+                            "key": "field_5cb04d52b613a",
                             "label": "Text",
                             "name": "com_stats_text",
                             "type": "wysiwyg",
@@ -435,7 +435,7 @@
                             "media_upload": 1
                         },
                         {
-                            "key": "field_5c83d9f02442f",
+                            "key": "field_5cb04d52b6145",
                             "label": "Rows",
                             "name": "com_stats_rows",
                             "type": "repeater",
@@ -454,7 +454,7 @@
                             "button_label": "Add Row",
                             "sub_fields": [
                                 {
-                                    "key": "field_5c83db0b24430",
+                                    "key": "field_5cb04d5317ae2",
                                     "label": "Title",
                                     "name": "com_stats_rows_title",
                                     "type": "text",
@@ -475,7 +475,7 @@
                                     "disabled": 0
                                 },
                                 {
-                                    "key": "field_5c83db1724431",
+                                    "key": "field_5cb04d5317af1",
                                     "label": "Description",
                                     "name": "com_stats_rows_description",
                                     "type": "text",
@@ -498,7 +498,7 @@
                             ]
                         },
                         {
-                            "key": "field_5caee53c3dd15",
+                            "key": "field_5cb04d52b614f",
                             "label": "Link Text",
                             "name": "com_stats_link_text",
                             "type": "text",
@@ -519,7 +519,7 @@
                             "disabled": 0
                         },
                         {
-                            "key": "field_5caee5543dd16",
+                            "key": "field_5cb04d52b615a",
                             "label": "Link Url",
                             "name": "com_stats_link_url",
                             "type": "text",
@@ -550,7 +550,7 @@
                     "display": "row",
                     "sub_fields": [
                         {
-                            "key": "field_5c83dc4224433",
+                            "key": "field_5cb04d52b6165",
                             "label": "Title",
                             "name": "com_services_title",
                             "type": "text",
@@ -571,7 +571,7 @@
                             "disabled": 0
                         },
                         {
-                            "key": "field_5cb071d280733",
+                            "key": "field_5cb071f6e1b11",
                             "label": "Link Url",
                             "name": "com_services_link_url",
                             "type": "text",
@@ -624,5 +624,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1555067365
+    "modified": 1555067392
 }

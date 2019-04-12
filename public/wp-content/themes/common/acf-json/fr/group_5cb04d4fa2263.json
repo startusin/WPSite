@@ -1,9 +1,9 @@
 {
-    "key": "group_5cabb20212af8",
+    "key": "group_5cb04d4fa2263",
     "title": "Blog Basic",
     "fields": [
         {
-            "key": "field_5cabb20219093",
+            "key": "field_5cb04d4fa816e",
             "label": "Sub Title",
             "name": "blog_basic_sub_title",
             "type": "wysiwyg",
@@ -21,7 +21,7 @@
             "media_upload": 0
         },
         {
-            "key": "field_5cabb202190a2",
+            "key": "field_5cb04d4fa817c",
             "label": "Image",
             "name": "blog_basic_image",
             "type": "image",
@@ -45,7 +45,7 @@
             "mime_types": ""
         },
         {
-            "key": "field_5cabb202190ae",
+            "key": "field_5cb04d4fa8187",
             "label": "Download",
             "name": "blog_basic_download",
             "type": "repeater",
@@ -64,7 +64,7 @@
             "button_label": "Add Row",
             "sub_fields": [
                 {
-                    "key": "field_5cabb20225e6e",
+                    "key": "field_5cb04d4fb5454",
                     "label": "File",
                     "name": "blog_basic_download_file",
                     "type": "file",
@@ -102,5 +102,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1554756098
+    "modified": 1555057999
 }
