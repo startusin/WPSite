@@ -1,0 +1,14 @@
+{
+  "Today": {"fr": "Aujourd'hui"},
+  "Last Week": {"fr": "La semaine dernière"},
+  "Last Month": {"fr": "Le mois dernier"},
+  "Last Year": {"fr": "L'année dernière"},
+  "Since Beginning": {"fr": "Depuis le début"},
+  "Apply": {"fr": "Appliquer"},
+  "Select All": {"fr": "Sélectionnez tout"},
+  "Filters by date": {"fr": "Filtre par date"},
+  "Filters by policy": {"fr": "Filtre par politique"},
+  "Filters by category": {"fr": "Filtre par catégorie"},
+  "results": {"fr": "résultats"},
+  "Search": {"fr": "Chercher"}
+}

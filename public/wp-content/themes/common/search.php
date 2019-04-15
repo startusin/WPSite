@@ -93,13 +93,13 @@ $qPosts = $wpdb->get_results( 'SELECT wp_posts.*, wp_postmeta.* FROM wp_posts LE
     <div class="filter_page">
         <div class="container">
             <div class="clear"></div>
-            <p class="title search_t">Search</p>
+            <p class="title search_t"><?php echo i18nString('Search'); ?></p>
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
                     <?php echo get_search_form(false); ?>
                 </div>
             </div>
-            <p class="results open_sans"><?php echo count($qPosts); ?> results</p>
+            <p class="results open_sans"><?php echo count($qPosts); ?> <?php echo i18nString('results'); ?></p>
         </div>
         <div class="container">
             <div class="row">
@@ -143,9 +143,13 @@ $qPosts = $wpdb->get_results( 'SELECT wp_posts.*, wp_postmeta.* FROM wp_posts LE
             <form name="filter" id="filter" method="get">
                 <input type="hidden" name="s" value="<?php echo get_search_query(); ?>">
                 <input type="hidden" name="lang" value="<?php echo $_REQUEST['lang'] ?? 'en'; ?>">
-                <p class="filter_title bold" data-toggle="collapse" data-target="#f_category" aria-expanded="true">Filters by category</p>
+                <p class="filter_title bold" data-toggle="collapse" data-target="#f_category" aria-expanded="true">
+                    <?php echo i18nString('Filters by category'); ?>
+                </p>
                 <div id="f_category" class="collapse show">
-                    <a href="" id="select_all_categorys" class="select_all open_sans">Select All</a>
+                    <a href="" id="select_all_categorys" class="select_all open_sans">
+                        <?php echo i18nString('Select All'); ?>
+                    </a>
                     <ul class="filter_list open_sans">
                         <?php $categorys = get_posts(['numberposts' => -1, 'post_type' => 'categories']); ?>
                         <?php foreach ($categorys as $catg): ?>
@@ -164,9 +168,11 @@ $qPosts = $wpdb->get_results( 'SELECT wp_posts.*, wp_postmeta.* FROM wp_posts LE
                         <?php endforeach; ?>
                     </ul>
                 </div>
-                <p class="filter_title bold" data-toggle="collapse" data-target="#f_policy" aria-expanded="true">Filters by policy</p>
+                <p class="filter_title bold" data-toggle="collapse" data-target="#f_policy" aria-expanded="true">
+                    <?php echo i18nString('Filters by policy'); ?>
+                </p>
                 <div id="f_policy" class="collapse show">
-                    <a href="#" id="select_all_policies" class="select_all open_sans">Select All</a>
+                    <a href="#" id="select_all_policies" class="select_all open_sans"><?php echo i18nString('Select All'); ?></a>
                     <ul class="filter_list open_sans">
                         <?php $policys = get_posts(['numberposts' => -1, 'post_type' => 'post', 'orderby'=> 'title', 'order' => 'ASC']); ?>
                         <?php foreach ($policys as $policy): ?>
@@ -185,42 +191,44 @@ $qPosts = $wpdb->get_results( 'SELECT wp_posts.*, wp_postmeta.* FROM wp_posts LE
                         <?php endforeach; ?>
                     </ul>
                 </div>
-                <p class="filter_title bold collapsed" data-toggle="collapse" data-target="#f_date" aria-expanded="false">Filters by date</p>
+                <p class="filter_title bold collapsed" data-toggle="collapse" data-target="#f_date" aria-expanded="false">
+                    <?php echo i18nString('Filters by date'); ?>
+                </p>
                 <div id="f_date" class="collapse">
                     <ul class="filter_list open_sans">
                         <li>
-                            <label class="checkbox"">Today
+                            <label class="checkbox""><?php echo i18nString('Today'); ?>
                                 <input type="checkbox" name="date" value="today"<?php if ($_REQUEST['date'] === 'today'): ?> checked<?php endif; ?>>
                                 <span class="checkmark"></span>
                             </label>
                         </li>
                         <li>
-                            <label class="checkbox"">Last Week
+                            <label class="checkbox""><?php echo i18nString('Last Week'); ?>
                                 <input type="checkbox" name="date" value="week"<?php if ($_REQUEST['date'] === 'week'): ?> checked<?php endif; ?>>
                                 <span class="checkmark"></span>
                             </label>
                         </li>
                         <li>
-                            <label class="checkbox"">Last Month
+                            <label class="checkbox""><?php echo i18nString('Last Month'); ?>
                                 <input type="checkbox" name="date" value="month"<?php if ($_REQUEST['date'] === 'month'): ?> checked<?php endif; ?>>
                                 <span class="checkmark"></span>
                             </label>
                         </li>
                         <li>
-                            <label class="checkbox"">Last Year
+                            <label class="checkbox""><?php echo i18nString('Last Year'); ?>
                                 <input type="checkbox" name="date" value="year"<?php if ($_REQUEST['date'] === 'year'): ?> checked<?php endif; ?>>
                                 <span class="checkmark"></span>
                             </label>
                         </li>
                         <li>
-                            <label class="checkbox"">Since Beginning
+                            <label class="checkbox""><?php echo i18nString('Since Beginning'); ?>
                                 <input type="checkbox" name="date" value="all"<?php if ($_REQUEST['date'] === 'all' || !$_REQUEST['date']): ?> checked<?php endif; ?>>
                                 <span class="checkmark"></span>
                             </label>
                         </li>
                     </ul>
                 </div>
-                <button type="submit" class="btn apply">Apply</button>
+                <button type="submit" class="btn apply"><?php echo i18nString('Apply'); ?></button>
             </form>
         </div>
     </div>

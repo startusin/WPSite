@@ -29,10 +29,10 @@
                 <div class="right_block">
                     <p class="title bold right_title">All Policies</p>
                     <ul class="policies_menu open_sans">
-                        <?php $menu = get_posts(['post_type' => 'post', 'fields' => 'ids', 'numberposts' => 30, 'orderby'=> 'title', 'order' => 'ASC']); ?>
+                        <?php $menu = get_posts(['post_type' => 'post', 'numberposts' => 30, 'orderby'=> 'title', 'order' => 'ASC']); ?>
                         <?php foreach ($menu as $item): ?>
                             <li>
-                                <a href="<?php the_permalink($item); ?>" class="page_<?php echo $item; ?>"><?php echo get_the_title($item); ?></a>
+                                <a href="<?php the_permalink($item->ID); ?>" class="page_<?php echo $item->ID; ?>"><?php echo $item->post_title; ?></a>
                             </li>
                         <?php endforeach; ?>
                     </ul>

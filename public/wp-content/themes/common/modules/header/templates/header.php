@@ -35,10 +35,17 @@
                                     <div class="row">
                                         <?php $rows = get_posts(['post_type' => 'post', 'numberposts' => -1, 'orderby'=> 'title', 'order' => 'ASC']); ?>
                                         <?php $arr = [1 => [], 2 => [], 3 => []]; ?>
+
+                                        <?php $divider = (int)ceil(count($rows) / 3); ?>
                                         <?php $subIndex = 0; ?>
+                                        <?php $currKey = 1; ?>
                                         <?php foreach($rows as $row): $subIndex++; ?>
-                                            <?php $arr[$subIndex][] = ['link' => get_the_permalink($row->ID), 'name' => $row->post_title]; ?>
-                                            <?php if($subIndex === 3): $subIndex = 0; endif; ?>
+                                            <?php $arr[$currKey][] = ['link' => get_the_permalink($row->ID), 'name' => $row->post_title]; ?>
+                                            <?php if($subIndex === $divider):
+                                                $divider = (int)ceil((count($rows) - $divider) / 2);
+                                                $currKey++;
+                                                $subIndex = 0;
+                                            endif; ?>
                                         <?php endforeach; ?>
 
                                         <div class="col-12 col-lg-4">
@@ -86,7 +93,6 @@
         </nav>
     </div>
 </header>
-
 <?php $page_id = get_the_ID(); ?>
 <?php $page = get_ancestors($page_id, 'page')[0]; ?>
 

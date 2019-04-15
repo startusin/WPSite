@@ -1,4 +1,9 @@
 <?php
+global $lang;
+global $i18nContainer;
+$lang = $_REQUEST['lang'] ?? 'en';
+$i18nContainer = json_decode(file_get_contents(get_template_directory().'/translations/strings.json') ?? '{}', true);
+
 function get_reading_time($content) {
     $minutes = floor( str_word_count(strip_tags($content)) / 200);
     return (int)$minutes === 0 ? "less that 1 min." : "about {$minutes} min.";
@@ -22,3 +27,13 @@ function change_post_menu_label() {
     $submenu['edit.php'][10][0] = 'Add Policy';
 }
 add_action( 'admin_menu', 'change_post_menu_label' );
+
+/**
+ * @param $string
+ * @return string
+ */
+function i18nString($string) {
+    global $i18nContainer;
+    global $lang;
+    return $i18nContainer[$string][$lang] ?? $string;
+}
