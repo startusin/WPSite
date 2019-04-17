@@ -12,7 +12,8 @@
                     <?php endif; ?>
                     <?php
                     $content_post = get_post(get_the_ID());
-                    echo $content_post->post_content;
+                    $content = str_replace("\n", '<br>', $content_post->post_content);
+                    echo $content;
                     ?>
                 </div>
 

@@ -11,7 +11,7 @@ Template Name: Employers
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
                 <p class="title title-top"><?php the_field('employers_page_title'); ?></p>
                 <div class="clear hidden-xs"></div>
-                <?php $employers = get_field('employers_page_employers'); ?>
+                <?php $employers = get_posts(['post_type' => 'employers', 'posts_per_page' => -1, 'fields' => 'ids']); ?>
                 <?php foreach ($employers as $id): ?>
                     <div class="secretariat">
                         <div class="row">

@@ -35,7 +35,7 @@ Template Name: Publications
                     <?php if (get_field('publications_basic_top_title')): ?>
                         <div class="green"><?php the_field('publications_basic_top_title'); ?></div>
                     <?php endif; ?>
-                    <?php the_field('publications_basic_content'); ?>
+                    <?php echo str_replace("\n", '<br>', get_field('publications_basic_content')); ?>
                 </div>
 
                 <?php if(get_field('publications_basic_download')): ?>
