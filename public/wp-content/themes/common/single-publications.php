@@ -6,7 +6,7 @@ Template Name: Publications
 <?php get_header(); ?>
 <?php $page_id = get_the_ID(); ?>
     <?php if (get_field('publications_basic_layout') === 'banner'): ?>
-        <div class="banner d-flex flex-row justify-content-center align-items-center" style="background-image: url(<?php echo wp_get_attachment_image_src(get_field('publications_basic_image'), 'full')[0]; ?>)"></div>
+        <div class="banner d-flex flex-row justify-content-center align-items-center" style="background-image: url(<?php echo wp_get_attachment_image_src(get_field('publications_basic_image'), 'wp-blog-bannner')[0]; ?>)"></div>
     <?php endif; ?>
 
     <?php if (get_field('publications_basic_layout') === 'file'): ?>
