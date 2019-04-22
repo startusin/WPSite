@@ -28,15 +28,23 @@
     margin-bottom: 1rem;
   }
 
+  .members_block {
+    a {
+      color: #333333;
+      margin: 0;
+    }
+
+    .mb {
+      margin-bottom: 15px;
+    }
+  }
+
   .country_description {
     font-weight: 600;
     margin-bottom: 15px;
 
-    &.first {
-      margin-top: 15px;
-    }
-
     p {
+      color: #333333;
       margin: 0;
     }
   }

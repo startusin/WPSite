@@ -1,9 +1,9 @@
 {
-    "key": "group_5c882c0785c83",
+    "key": "group_5cbb7447a0c60",
     "title": "Members Basic",
     "fields": [
         {
-            "key": "field_5caaf6ed55ca1",
+            "key": "field_5cbb7447a6a7a",
             "label": "Observed Member",
             "name": "members_basic_observed",
             "type": "checkbox",
@@ -23,7 +23,7 @@
             "toggle": 0
         },
         {
-            "key": "field_5c882c0789054",
+            "key": "field_5cbb7447a6a86",
             "label": "Flag",
             "name": "members_basic_flag",
             "type": "image",
@@ -47,7 +47,7 @@
             "mime_types": ""
         },
         {
-            "key": "field_5cb9a09cff9fb",
+            "key": "field_5cbb7447a6a91",
             "label": "Partners",
             "name": "members_basic_partners",
             "type": "repeater",
@@ -66,7 +66,7 @@
             "button_label": "Add Row",
             "sub_fields": [
                 {
-                    "key": "field_5cb9a0e7ff9fc",
+                    "key": "field_5cbb7447b3a16",
                     "label": "Person",
                     "name": "members_basic_partners_person",
                     "type": "text",
@@ -87,7 +87,7 @@
                     "disabled": 0
                 },
                 {
-                    "key": "field_5cb9a106ff9fd",
+                    "key": "field_5cbb7447b3a24",
                     "label": "Modal Image",
                     "name": "members_basic_partners_image",
                     "type": "image",
@@ -111,7 +111,7 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_5cb9a136ff9fe",
+                    "key": "field_5cbb7447b3a2e",
                     "label": "Modal Center Content",
                     "name": "members_basic_partners_content",
                     "type": "wysiwyg",
@@ -129,7 +129,7 @@
                     "media_upload": 1
                 },
                 {
-                    "key": "field_5cb9a1acffa00",
+                    "key": "field_5cbb7447b3a39",
                     "label": "Modal Buttom Text",
                     "name": "members_basic_partners_buttom_text",
                     "type": "text",
@@ -169,5 +169,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1555788810
+    "modified": 1555788991
 }

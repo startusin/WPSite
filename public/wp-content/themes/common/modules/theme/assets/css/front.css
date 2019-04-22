@@ -5334,14 +5334,19 @@ body .contact-us-link a {
   display: inline-block;
   margin-bottom: 1rem;
 }
+.page-template-template-members .members_block a {
+  color: #333333;
+  margin: 0;
+}
+.page-template-template-members .members_block .mb {
+  margin-bottom: 15px;
+}
 .page-template-template-members .country_description {
   font-weight: 600;
   margin-bottom: 15px;
 }
-.page-template-template-members .country_description.first {
-  margin-top: 15px;
-}
 .page-template-template-members .country_description p {
+  color: #333333;
   margin: 0;
 }
 
