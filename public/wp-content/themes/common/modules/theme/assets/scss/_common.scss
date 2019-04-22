@@ -1424,8 +1424,43 @@ label {
   vertical-align: top;
 }
 
-#navbarSupportedContent {
-  margin-top: 25px;
+@media (min-width: $screen-md-min) {
+  #navbarSupportedContent {
+    margin-top: 15px;
+  }
+
+  .navbar-brand img {
+    height: auto;
+    width: 280px;
+    margin-top: -19px;
+  }
+}
+
+.social-pub {
+  margin-bottom: 20px;
+  list-style-type: none;
+  padding: 0;
+  display: inline-block;
+  margin-left: -33px;
+
+  li {
+    display: inline-block;
+    margin-left: 33px;
+  }
+
+  i {
+    color: #333333;
+    font-size: 19px;
+    transition: 0.7s;
+
+    &:hover {
+      color: #4f9611;
+    }
+
+    &.fa-youtube:before {
+      vertical-align: middle;
+    }
+  }
 }
 
 .link_title {
@@ -1507,4 +1542,8 @@ label {
 .srch-icon {
   font-size: 21px;
   margin-right: 7px;
+}
+
+.fa-youtube:before {
+  vertical-align: middle;
 }

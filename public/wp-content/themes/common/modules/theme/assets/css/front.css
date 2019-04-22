@@ -1542,8 +1542,38 @@ label {
   vertical-align: top;
 }
 
-#navbarSupportedContent {
-  margin-top: 25px;
+@media (min-width: 992px) {
+  #navbarSupportedContent {
+    margin-top: 15px;
+  }
+
+  .navbar-brand img {
+    height: auto;
+    width: 280px;
+    margin-top: -19px;
+  }
+}
+.social-pub {
+  margin-bottom: 20px;
+  list-style-type: none;
+  padding: 0;
+  display: inline-block;
+  margin-left: -33px;
+}
+.social-pub li {
+  display: inline-block;
+  margin-left: 33px;
+}
+.social-pub i {
+  color: #333333;
+  font-size: 19px;
+  transition: 0.7s;
+}
+.social-pub i:hover {
+  color: #4f9611;
+}
+.social-pub i.fa-youtube:before {
+  vertical-align: middle;
 }
 
 .link_title {
@@ -1624,6 +1654,10 @@ label {
 .srch-icon {
   font-size: 21px;
   margin-right: 7px;
+}
+
+.fa-youtube:before {
+  vertical-align: middle;
 }
 
 body {

@@ -120,12 +120,12 @@ $qPosts = $wpdb->get_results( 'SELECT wp_posts.*, wp_postmeta.* FROM wp_posts LE
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-8 col-lg-10">
                                     <div class="сategory_r">
-                                        <?php $post_сategories = get_field('publications_basic_categories'); ?>
-                                        <?php if( $post_сategories ): ?>
+                                        <?php $post_categories = get_field('publications_basic_categories'); ?>
+                                        <?php if( $post_categories ): ?>
                                             <?php
                                             $links = [];
-                                            foreach($post_сategories as $сategory)
-                                                $links[] = '<a href="'.get_permalink().'" class="category-list arrow bold">'.get_the_title($сategory).'</a>';
+                                            foreach($post_categories as $category)
+                                                $links[] = '<a href="/?s=&cats%5B%5D='.$category.'&date=all" class="category-list arrow bold">'.get_the_title($category).'</a>';
                                             echo join(', ',$links);
                                             ?>
                                         <?php endif; ?>

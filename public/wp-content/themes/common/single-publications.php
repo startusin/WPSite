@@ -38,6 +38,12 @@ Template Name: Publications
                     <?php echo str_replace("\n", '<br>', get_field('publications_basic_content')); ?>
                 </div>
 
+                <ul class="social-pub">
+                    <?php while (has_sub_field('header_social_network', 'option')): ?>
+                        <li><a href="<?php the_sub_field('header_social_network_url'); ?>"><?php the_sub_field('header_social_network_icon'); ?></a></li>
+                    <?php endwhile; ?>
+                </ul>
+
                 <?php if(get_field('publications_basic_download')): ?>
                     <hr>
                     <div class="title bold downloads-title">Downloads</div>
@@ -55,7 +61,11 @@ Template Name: Publications
                         <?php $rows = get_field('header_menu', 'option'); ?>
                         <?php foreach ($rows[3]['header_menu_dropdown'] as $row): ?>
                             <li>
-                                <a href="<?php echo $row['header_menu_dropdown_url']; ?>" class="page_<?php echo $row['header_menu_dropdown_title']; ?>"><?php echo $row['header_menu_dropdown_title']; ?></a>
+                                <?php if(isset($row['header_menu_dropdown_custom_url']) && !empty($row['header_menu_dropdown_custom_url'])): ?>
+                                    <a href="<?php echo $row['header_menu_dropdown_custom_url']; ?>"><?php echo $row['header_menu_dropdown_title']; ?></a>
+                                <?php else: ?>
+                                    <a href="<?php echo $row['header_menu_dropdown_url']; ?>" class="page_<?php echo $row['header_menu_dropdown_title']; ?>"><?php echo $row['header_menu_dropdown_title']; ?></a>
+                                <?php endif; ?>
                             </li>
                         <?php endforeach; ?>
                     </ul>
