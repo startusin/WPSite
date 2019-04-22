@@ -55,10 +55,10 @@ Template Name: All page
                 <div class="right_block">
                     <p class="title bold right_title">About Us</p>
                     <ul class="policies_menu open_sans">
-                        <?php $all_pages_menu = get_field('all_page_menu'); ?>
-                        <?php foreach ($all_pages_menu as $all_page_menu): ?>
+                        <?php $rows = get_field('header_menu', 'option'); ?>
+                        <?php foreach ($rows[0]['header_menu_dropdown'] as $row): ?>
                             <li>
-                                <a href="<?php the_permalink($all_page_menu); ?>" class="page_<?php echo $all_page_menu; ?>"><?php echo get_the_title($all_page_menu); ?></a>
+                                <a href="<?php echo $row['header_menu_dropdown_url']; ?>" class="page_<?php echo $row['header_menu_dropdown_title']; ?>"><?php echo $row['header_menu_dropdown_title']; ?></a>
                             </li>
                         <?php endforeach; ?>
                     </ul>
