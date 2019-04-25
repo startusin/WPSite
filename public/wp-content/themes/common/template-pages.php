@@ -15,12 +15,12 @@ Template Name: All page
             <div class="row align-items-center">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                     <p class="title_detail"><?php the_field('all_page_title'); ?></p>
-                    <a href="" class="bold green">Press Release</a>
+                    <a href="" class="bold green"><?php echo i18nString('Press Release'); ?></a>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                     <div class="padding-download">
                         <?php $file = get_field('all_page_file');?>
-                        <a href="<?php echo $file['url']; ?>" class="download open_sans">Download</a>
+                        <a href="<?php echo $file['url']; ?>" class="download open_sans"><?php echo i18nString('Download'); ?></a>
                     </div>
                 </div>
             </div>
@@ -38,13 +38,14 @@ Template Name: All page
                     <?php endif; ?>
                     <?php
                     $content_post = get_post(get_the_ID());
-                    echo $content_post->post_content;
+                    $content_post = str_replace("\n", '<br>', $content_post->post_content);
+                    echo $content_post;
                     ?>
                 </div>
 
                 <?php if(get_field('all_page_download')): ?>
                     <hr>
-                    <div class="title bold downloads-title">Downloads</div>
+                    <div class="title bold downloads-title"><?php echo i18nString('Downloads'); ?></div>
                     <?php while(has_sub_field('all_page_download')): ?>
                         <?php $file = get_sub_field('all_page_download_file');?>
                         <a href="<?php echo $file['url']; ?>" class="url open_sans folder"><?php echo $file['filename']; ?></a>
@@ -53,7 +54,7 @@ Template Name: All page
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
                 <div class="right_block">
-                    <p class="title bold right_title">About Us</p>
+                    <p class="title bold right_title"><?php echo i18nString('About Us'); ?></p>
                     <ul class="policies_menu open_sans">
                         <?php $rows = get_field('header_menu', 'option'); ?>
                         <?php foreach ($rows[0]['header_menu_dropdown'] as $row): ?>

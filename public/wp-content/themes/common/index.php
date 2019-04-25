@@ -112,7 +112,7 @@
             <?php endwhile; ?>
             <?php wp_reset_postdata(); ?>
             <div class="open_sans bold href_right margin_top">
-                <?php echo paginate_links(['prev_text' => '', 'next_text' => 'Show more']); ?>
+                <?php echo paginate_links(['prev_text' => '', 'next_text' => i18nString('Show more')]); ?>
             </div>
         </div>
         <div class="clear"></div>

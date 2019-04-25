@@ -4,7 +4,10 @@
             <div class="title_margin">
                 <div class="row align-items-end no-gutters">
                     <div class="col-xs-12 col-sm-8"><p class="title_no_margin"><?php the_sub_field('com_news_title'); ?></p></div>
-                    <div class="col-xs-12 col-sm-4 col-lg-3 text-right"><a class="more open_sans" href="<?php the_sub_field('com_news_url'); ?>">View more</a></div>
+                    <div class="col-xs-12 col-sm-4 col-lg-3 text-right">
+                        <a class="more open_sans" href="<?php the_sub_field('com_news_url'); ?>">
+                            <?php echo i18nString('View more'); ?>
+                        </a></div>
                 </div>
             </div>
             <div class="home_new_block">

@@ -19,7 +19,7 @@
 
                 <?php if(get_field('blog_basic_download')): ?>
                     <hr>
-                    <div class="title_download bold downloads-title">Downloads</div>
+                    <div class="title_download bold downloads-title"><?php echo i18nString('Downloads'); ?></div>
                     <?php while(has_sub_field('blog_basic_download')): ?>
                         <?php $file = get_sub_field('blog_basic_download_file');?>
                         <a href="<?php echo $file['url']; ?>" class="url open_sans folder"><?php echo $file['filename']; ?></a>
@@ -28,7 +28,7 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 policies">
                 <div class="right_block">
-                    <p class="title bold right_title">All Policies</p>
+                    <p class="title bold right_title"><?php echo i18nString('All Policies'); ?></p>
                     <ul class="policies_menu open_sans">
                         <?php $menu = get_posts(['post_type' => 'post', 'numberposts' => 30, 'orderby'=> 'title', 'order' => 'ASC']); ?>
                         <?php foreach ($menu as $item): ?>

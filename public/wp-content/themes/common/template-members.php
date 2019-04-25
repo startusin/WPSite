@@ -7,10 +7,10 @@ Template Name: Members
     <div class="container">
         <div class="clear"></div>
         <p class="title"><?php the_field('members_page_title'); ?></p>
-        <?php $isObserved = get_the_ID() === 972 || get_the_ID() === 1053; ?>
+        <?php $isObserved = get_the_ID() === 972 || get_the_ID() === 1451; ?>
         <ul class="members_menu open_sans">
-            <li><a <?php if (!$isObserved): ?>class="active" <?php endif; ?>href="/members/?lang=<?php echo $_REQUEST['lang'] ?? 'en'; ?>">Ordinary members</a></li>
-            <li><a <?php if ($isObserved): ?>class="active" <?php endif; ?>href="/observed-members/?lang=<?php echo $_REQUEST['lang'] ?? 'en'; ?>">Observer members</a></li>
+            <li><a <?php if (!$isObserved): ?>class="active" <?php endif; ?>href="/members/?lang=<?php echo $_REQUEST['lang'] ?? 'en'; ?>"><?php echo i18nString('Ordinary members'); ?></a></li>
+            <li><a <?php if ($isObserved): ?>class="active" <?php endif; ?>href="/observed-members/?lang=<?php echo $_REQUEST['lang'] ?? 'en'; ?>"><?php echo i18nString('Observer members'); ?></a></li>
         </ul>
         <?php $members = get_posts(['posts_per_page' => -1, 'post_type' => 'members', 'fields' => 'ids', 'orderby'=> 'title', 'order' => 'ASC']); ?>
         <div class="row">

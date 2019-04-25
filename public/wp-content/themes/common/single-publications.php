@@ -15,12 +15,12 @@ Template Name: Publications
             <div class="row align-items-center">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                     <p class="title_detail"><?php the_field('publications_basic_title'); ?></p>
-                    <a href="" class="bold">Press Release</a>
+                    <a href="" class="bold"><?php echo i18nString('Press Release'); ?></a>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                     <div class="center">
                         <?php $file = get_field('publications_basic_file');?>
-                        <a href="<?php echo $file['url']; ?>" class="download open_sans">Download</a>
+                        <a href="<?php echo $file['url']; ?>" class="download open_sans"><?php echo i18nString('Download'); ?></a>
                     </div>
                 </div>
             </div>
@@ -38,15 +38,17 @@ Template Name: Publications
                     <?php echo str_replace("\n", '<br>', get_field('publications_basic_content')); ?>
                 </div>
 
+                <?php $thelink = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
                 <ul class="social-pub">
-                    <?php while (has_sub_field('header_social_network', 'option')): ?>
-                        <li><a href="<?php the_sub_field('header_social_network_url'); ?>"><?php the_sub_field('header_social_network_icon'); ?></a></li>
-                    <?php endwhile; ?>
+                    <li><a href="https://twitter.com/intent/tweet?url=<?php echo $thelink; ?>"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $thelink; ?>"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo $thelink; ?>"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="http://pinterest.com/pin/create/button/?url=<?php echo $thelink; ?>"><i class="fab fa-pinterest"></i></a></li>
                 </ul>
 
                 <?php if(get_field('publications_basic_download')): ?>
                     <hr>
-                    <div class="title bold downloads-title">Downloads</div>
+                    <div class="title bold downloads-title"><?php echo i18nString('Downloads'); ?></div>
                     <?php while(has_sub_field('publications_basic_download')): ?>
                         <?php $file = get_sub_field('publications_basic_download_file');?>
                         <a href="<?php echo $file['url']; ?>" class="url open_sans folder"><?php echo $file['filename']; ?></a>
@@ -56,7 +58,7 @@ Template Name: Publications
             <div class="visible-lg col-lg-1"></div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
                 <div class="right_block">
-                    <p class="title bold right_title">All Publications</p>
+                    <p class="title bold right_title"><?php echo i18nString('All Publications'); ?></p>
                     <ul class="policies_menu open_sans">
                         <?php $rows = get_field('header_menu', 'option'); ?>
                         <?php foreach ($rows[3]['header_menu_dropdown'] as $row): ?>
