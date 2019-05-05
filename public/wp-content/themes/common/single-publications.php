@@ -15,7 +15,15 @@ Template Name: Publications
             <div class="row align-items-center">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                     <p class="title_detail"><?php the_field('publications_basic_title'); ?></p>
-                    <a href="" class="bold"><?php echo i18nString('Press Release'); ?></a>
+                    <?php $post_categories = get_field('publications_basic_categories'); ?>
+                    <?php if( $post_categories ): ?>
+                        <?php
+                        $links = [];
+                        foreach($post_categories as $category)
+                            $links[] = '<a href="/?s=&cats%5B%5D='.$category.'&date=all&lang='.(isset($_REQUEST['lang']) && !empty($_REQUEST['lang']) ? $_REQUEST['lang'] : 'en').'" class="bold">'.get_the_title($category).'</a>';
+                        echo join(', ',$links);
+                        ?>
+                    <?php endif; ?>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                     <div class="center">
@@ -43,7 +51,6 @@ Template Name: Publications
                     <li><a href="https://twitter.com/intent/tweet?url=<?php echo $thelink; ?>"><i class="fab fa-twitter"></i></a></li>
                     <li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $thelink; ?>"><i class="fab fa-facebook-f"></i></a></li>
                     <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo $thelink; ?>"><i class="fab fa-linkedin-in"></i></a></li>
-                    <li><a href="http://pinterest.com/pin/create/button/?url=<?php echo $thelink; ?>"><i class="fab fa-pinterest"></i></a></li>
                 </ul>
 
                 <?php if(get_field('publications_basic_download')): ?>

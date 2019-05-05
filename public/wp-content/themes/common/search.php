@@ -88,7 +88,7 @@ function custom_excerpt($x, $length = 450) {
     return strlen($x)<=$length ? $x : substr($x,0,$length) . '...';
 }
 
-$qPosts = $wpdb->get_results( 'SELECT wp_posts.*, wp_postmeta.* FROM wp_posts LEFT JOIN wp_postmeta ON wp_posts.ID = wp_postmeta.post_id WHERE wp_posts.id IN ('.implode(',', $ids).') AND (LOWER(wp_posts.post_title) LIKE "%'.strtolower($s).'%" OR LOWER(wp_postmeta.meta_value) LIKE "%'.strtolower($s).'%") GROUP BY wp_posts.id' );
+$qPosts = $wpdb->get_results( 'SELECT wp_posts.*, wp_postmeta.* FROM wp_posts LEFT JOIN wp_postmeta ON wp_posts.ID = wp_postmeta.post_id WHERE wp_posts.id IN ('.implode(',', $ids).') AND (LOWER(wp_posts.post_title) LIKE "%'.strtolower($s).'%" OR LOWER(wp_postmeta.meta_value) LIKE "%'.strtolower($s).'%") GROUP BY wp_posts.id ORDER BY wp_posts.post_date DESC' );
 ?>
     <div class="filter_page">
         <div class="container">
@@ -125,7 +125,7 @@ $qPosts = $wpdb->get_results( 'SELECT wp_posts.*, wp_postmeta.* FROM wp_posts LE
                                             <?php
                                             $links = [];
                                             foreach($post_categories as $category)
-                                                $links[] = '<a href="/?s=&cats%5B%5D='.$category.'&date=all" class="category-list arrow bold">'.get_the_title($category).'</a>';
+                                                $links[] = '<a href="/?s=&cats%5B%5D='.$category.'&date=all&lang='.(isset($_REQUEST['lang']) && !empty($_REQUEST['lang']) ? $_REQUEST['lang'] : 'en').'" class="category-list arrow bold">'.get_the_title($category).'</a>';
                                             echo join(', ',$links);
                                             ?>
                                         <?php endif; ?>

@@ -25,5 +25,6 @@ Template Name: Timeline
         <?php endforeach; ?>
     </ul>
     <div class="clear"></div>
+    <a href="#" id="back-to-top" title="Back to top">&raquo;</a>
 </div>
 <?php get_footer(); ?>

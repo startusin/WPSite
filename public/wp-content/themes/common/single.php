@@ -22,7 +22,7 @@
                     <div class="title_download bold downloads-title"><?php echo i18nString('Downloads'); ?></div>
                     <?php while(has_sub_field('blog_basic_download')): ?>
                         <?php $file = get_sub_field('blog_basic_download_file');?>
-                        <a href="<?php echo $file['url']; ?>" class="url open_sans folder"><?php echo $file['filename']; ?></a>
+                        <a href="<?php echo $file['url']; ?>" class="url open_sans folder"><?php echo !empty($file['title']) ? $file['title'] : $file['filename']; ?></a>
                     <?php endwhile; ?>
                 <?php endif; ?>
             </div>
