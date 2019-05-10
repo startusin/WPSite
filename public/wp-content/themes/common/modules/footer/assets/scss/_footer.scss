@@ -30,3 +30,39 @@ footer {
     }
   }
 }
+
+.cookie-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -45px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  background-color: #fff8e5;
+  text-align: center;
+  z-index: 10000;
+  opacity: .9;
+  padding: 15px;
+  font-family: 'Open Sans', sans-serif;
+
+  .txt-block {
+    flex: 1;
+  }
+
+  a {
+    color: #333;
+    text-decoration: underline;
+
+    &:hover {
+      color: #333;
+    }
+  }
+
+  .cookie-close-link {
+    margin-left: 20px;
+    font-weight: 700;
+  }
+}

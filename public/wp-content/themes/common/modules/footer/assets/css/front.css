@@ -29,4 +29,36 @@ footer {
   opacity: .8;
 }
 
+.cookie-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -45px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  background-color: #fff8e5;
+  text-align: center;
+  z-index: 10000;
+  opacity: .9;
+  padding: 15px;
+  font-family: 'Open Sans', sans-serif;
+}
+.cookie-bar .txt-block {
+  flex: 1;
+}
+.cookie-bar a {
+  color: #333;
+  text-decoration: underline;
+}
+.cookie-bar a:hover {
+  color: #333;
+}
+.cookie-bar .cookie-close-link {
+  margin-left: 20px;
+  font-weight: 700;
+}
+
 /*# sourceMappingURL=front.css.map */

@@ -37,3 +37,15 @@
     </div>
 </footer>
 
+<div id="cookies-main-wrapper" class="cookie-bar" style="display: none; bottom: 0;">
+    <div class="txt-block"><?php echo i18nString('We use cookies to improve your browsing experience'); ?>
+        <a href="/cookie-policy/" class="cookie-link"><?php echo i18nString('Learn more'); ?></a>
+        <a href="#" class="cookie-close-link accept-cookie"><?php echo i18nString('Accept'); ?></a>
+    </div>
+    <div class="close-btn">
+        <a href="#" class="w-inline-block accept-cookie">
+            <i class="fa fa-window-close"></i>
+        </a>
+    </div>
+</div>
+

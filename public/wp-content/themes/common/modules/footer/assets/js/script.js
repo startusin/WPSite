@@ -120,6 +120,23 @@ jQuery( document ).ready(function( $ ) {
             }, 700);
         });
     }
+
+    function getCookie(name) {
+        var matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
+
+    $('.accept-cookie').click(function (e) {
+        document.cookie = "appeptedCookies=yes";
+        $('#cookies-main-wrapper').css('display', 'none');
+        e.preventDefault();
+    });
+
+    if (!getCookie('appeptedCookies')) {
+        $('#cookies-main-wrapper').css('display', 'flex');
+    }
 });
 
 

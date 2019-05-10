@@ -125,10 +125,11 @@ $qPosts = $wpdb->get_results( 'SELECT wp_posts.*, wp_postmeta.* FROM wp_posts LE
                                             <?php
                                             $links = [];
                                             foreach($post_categories as $category)
-                                                $links[] = '<a href="/?s=&cats%5B%5D='.$category.'&date=all&lang='.(isset($_REQUEST['lang']) && !empty($_REQUEST['lang']) ? $_REQUEST['lang'] : 'en').'" class="category-list arrow bold">'.get_the_title($category).'</a>';
+                                                $links[] = '<a href="/?s=&cats%5B%5D='.$category.'&date=all&lang='.(isset($_REQUEST['lang']) && !empty($_REQUEST['lang']) ? $_REQUEST['lang'] : 'en').'" class="category-list bold">'.get_the_title($category).'</a>';
                                             echo join(', ',$links);
                                             ?>
                                         <?php endif; ?>
+                                        <a href="<?php echo get_permalink(); ?>" class="arrow"></a>
                                     </div>
                                 </div>
                             </div>
